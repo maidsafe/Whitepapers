@@ -129,9 +129,9 @@ Third party developers will also be incentivised outside of the token scheme.  C
 The funding round will be operated as follows:
 
 * A fixed number of MaidSafeCoin will be issued and purchased in this round.
-* Within that period, public funds in the form of bitcoin can be sent to a bitcoin address set up by MaidSafe; this address is called the Origin address.
+* Within that period, public funds in the form of bitcoin and mastercoin can be sent to a bitcoin address set up by MaidSafe; this address is called the Origin address.
 * Each investor will purchase MaidSafecoin in this round. This will be directly transferable to safecoin on network earner launch.
-* A quantity of 429,496,729 will be purchased for an initial value of $0.03 per coin. (funding round total $12,884,901.87) 
+* A quantity of 399,993,442 coins will be purchased for an initial value of 20,333 per bitcoin or 1,464 per mastercoin. (funding round total $12,000,000). 
 * The corresponding amount of safecoin will then be credited into the MaidSafe account created by the network and convertible directly from MaidSafeCoin on a one to one basis.
 * Any unsold MaidSafeCoin will be split 50/50 between the existing investors and the developer pool. These developer coins will be allocated to fully planned out and resourced projects initially, to encourage rapid adoption.
 
