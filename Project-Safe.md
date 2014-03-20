@@ -363,7 +363,7 @@ The following diagram illustrates the transaction structure for RPC requests and
 ![Transaction Structure](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_structure.png)
 
 The following table illustrates the evolve of user accounts holding safecoin, together with the transaction and safecoin SDV held by Transaction Manager.
-![Transaction Scenarios](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_scenarios.png)
+![Transaction Scenarios](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_scenarios_new.png)
 
 #### 9.	Mining Safecoin
 Every mining interval, the Pmid Manager group around a vault will perform the mining for that vault. The Pmid Manager will generate a Random Attempt Target (R.A.T) based on the following calculation:
