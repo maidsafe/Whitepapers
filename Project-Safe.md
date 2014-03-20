@@ -1,6 +1,6 @@
 Version 1.1
 
-Last Updated 15 March 2014
+Last Updated 19th March 2014
 
 ## MaidSafe.net announces project SAFE to the community  ##
  
