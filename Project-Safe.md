@@ -90,7 +90,7 @@ The number of resources will be calculated by the network dynamically and in per
 
 MaidSafe's figures forecast an estimated mining rate over time, this forecast is completely dependent on a number of assumptions including; speed of network adoption and the amount of data stored…etc. MaidSafe does not see this as an obstacle, rather a huge opportunity. Competing in today’s market using the SAFE proposition is an enormous advantage to developers (many of which are described in this paper) and to do so in an open network which is owned by no one is very compelling.
 
-#### Funders
+#### Backers
  
 To allow distributed ownership of the network, MaidSafe will allocate 15% of the tokens on day 1.  The coins allocated are fungible, particularly in the form of resources as backers reach their required returns or simply trade the coins.  This allocation of safecoin will allow two separate entities to be rewarded:
 ##### 1: Current MaidSafe investors/shareholders. 
@@ -98,14 +98,14 @@ The current MaidSafe investors have invested for the past 8 years with complete 
  
 This allows investors to be rewarded for their help over the years and will also allow MaidSafe equity to return to being owned completely by the Foundation.  This approach will ensure that MaidSafe as a company is not in charge of the SAFE network and shareholders are treated with the respect they deserve.  When they are allocated safecoin they can hold these as any backer will today. 
  
-##### 2: crowd sale participants
-A bitcoin funding round will enable everyone worldwide to seed the SAFE project.  This will enable a direct purchase of ten percent of safecoin, these will be issued immediately.  Initially this round will value the SAFE project at circa $12M, as miners begin to earn and developers release products this valuation should very quickly increase. This figure appears reasonable as investors from eight years ago invested at a $15M valuation. These crowd sale participants will purchase **MaidSafeCoin**, this coin will be issued via the Master protocol suite and will be directly convertible to safecoin as soon as earners (miners) appear online. This allows immediate benefit to the project and will demonstrate the desire of all of seed funders to decentralise the Internet, enabling a plethora of new and exciting companies to emerge and provide us with true value at little cost.
+##### 2: Crowd Sale Participants
+A bitcoin kick starter style round will enable everyone worldwide to seed the SAFE project.  This will enable a direct purchase of ten percent of safecoin, these will be issued immediately.  Initially this round will value the SAFE project at circa $12M, as miners begin to earn and developers release products this valuation should very quickly increase. This figure appears reasonable as investors from eight years ago invested at a $15M valuation. These crowd sale participants will purchase **MaidSafeCoin**, this coin will be issued via the Master protocol suite and will be directly convertible to safecoin as soon as earners (miners) appear online. This allows immediate benefit to the project and will demonstrate the desire of all of seed funders to decentralise the Internet, enabling a plethora of new and exciting companies to emerge and provide us with true value at little cost.
 
 Funds raised from this round will be held by the MaidSafe Foundation and will be utilised to house the MaidSafe core team and provide financial assistance for a period of three years. It is assumed that after three years, the core MaidSafe team will have grown significantly and introduced further innovations into the space. There is no founders pool and the MaidSafe developers and team are not issued any safecoin and must earn these through commits to the code base and further innovation. This is a very important aspect of this project. No team should be rewarded by safecoin who have not provided value in some respect and this is particularly important of any existing development team.
 
 #### Developers
  
-MaidSafe proposes to reward developers in 2 ways.  Firstly, safecoin can be earned by contributing bug fixes and code that are accepted into the master branch of the SAFE codebase.  Secondly, developers that create apps that do not charge end users and are of benefit to the community will also be rewarded.  The issuance mechanism for both groups will come via the MaidSafe Foundation, who will be the recipient of the coins generated when MaidSafe seed the network with several hundred nodes during final platform testing.  This seeding stage will be public and others are welcome to contribute resources.  It should be acknowledged that until the network is declared ‘ready for general use’ that the coins may be destroyed from time to time and the network restarted.  There will be no private or hidden seeding of the network and announcements will be made at a minimum via the [mailing list](https://groups.google.com/forum/#!forum/maidsafe-development) during these events.
+MaidSafe proposes to reward developers in 2 ways.  Firstly, safecoin can be earned by contributing bug fixes and code that are accepted into the master branch of the SAFE codebase.  Secondly, developers that create apps that do not charge end users and are of benefit to the community will also be rewarded.  The issuance mechanism for both groups will come via the MaidSafe Foundation. MaidSafe the company will also generate coins by providing P.O.R when they seed the network with several hundred nodes during final platform testing.  This seeding stage will be public and others are welcome to contribute resources.  It should be acknowledged that until the network is declared ‘ready for general use’ that the coins may be destroyed from time to time and the network restarted.  There will be no private or hidden seeding of the network and announcements will be made at a minimum via the [mailing list](https://groups.google.com/forum/#!forum/maidsafe-development) during these events.
 
 15% of all safecoin earned will be allocated to the developer pool.  This will ensure the developer community is highly motivated and rewarded for providing free-to-use applications and improvements to the underlying codebase that utilise safecoin as their revenue model.
  
@@ -124,14 +124,14 @@ The size of the seeding network is estimated to be around 10,000 vaults, that be
 
 Third party developers will also be incentivised outside of the token scheme.  Choosing to develop their applications and businesses on the SAFE network will, when the network reaches critical mass, enable them to outperform all incumbents, while providing privacy and security to all their users.  The network code is free to use and there are no upfront charges for API keys or developer programmes.  Developers’ customer acquisition costs will be a fraction of the levels compared to traditional architecture due to the lack of infrastructure costs.
 
-#### SAFE seed funding round
+#### SAFE Seed Kick Starter
 
-The funding round will be operated as follows:
+The crowd sale will be operated as follows:
 
 * A fixed number of MaidSafeCoin will be issued and purchased in this round.
 * Within that period, public funds in the form of bitcoin and mastercoin can be sent to a bitcoin address set up by MaidSafe; this address is called the Origin address.
-* Each investor will purchase MaidSafecoin in this round. This will be directly transferable to safecoin on network earner launch.
-* A quantity of 399,993,442 coins will be purchased for an initial value of 20,333 per bitcoin or 1,464 per mastercoin. (funding round total $12,000,000). 
+* Each backer will purchase MaidSafecoin in this round. This will be directly transferable to safecoin on network earner launch.
+* A quantity of 399,993,442 coins will be purchased for an initial value of 20,333 per bitcoin or 1,464 per mastercoin. (crowd sale total $12,000,000). 
 * The corresponding amount of safecoin will then be credited into the MaidSafe account created by the network and convertible directly from MaidSafeCoin on a one to one basis.
 * Any unsold MaidSafeCoin will be split 50/50 between the existing investors and the developer pool. These developer coins will be allocated to fully planned out and resourced projects initially, to encourage rapid adoption.
 
@@ -139,9 +139,9 @@ The funding round will be operated as follows:
 
 Any funds allocated outside the funding round will be allocated to the MaidSafe Foundation and added to the decentralised application developers pool.
 
-The incentivisation of decentralised application projects that are funded via safecoin should also ensure very active decentralised application participation into a very powerful ecosystem with a pre-prepared revenue model.  It is also thought this model will encourage a more decentralised and distributed investor pool.  This model is very much in line with MaidSafe’s core values and decentralisation in general, using logic and fairness with as few ‘magic’ numbers as possible. 
+The incentivisation of decentralised application projects that are funded via safecoin should also ensure very active decentralised application participation into a very powerful ecosystem with a pre-prepared revenue model.  It is also thought this model will encourage a more decentralised and distributed pool of backers.  This model is very much in line with MaidSafe’s core values and decentralisation in general, using logic and fairness with as few ‘magic’ numbers as possible. 
 
-It is interesting to note this funding does not hold any safecoins for the founders; **no founders’ pool is involved.**  MaidSafe will work with funds raised and commit to continue to develop the internal library code to earn coins in the future, provided the code is accepted by the community (as per the acceptance criteria agreed on at that time by the mailing list participants and Foundation board).  It is also the founders’ belief that if MaidSafe or any other group do not continue to innovate, they should not continue to strive as businesses.  This allows the community to always be presented with the most efficient code and advancements to the system regardless of which entity makes those advances possible.
+It is interesting to note this kick starter does not hold any safecoins for the founders; **no founders’ pool is involved.**  MaidSafe will work with funds raised and commit to continue to develop the internal library code to earn coins in the future, provided the code is accepted by the community (as per the acceptance criteria agreed on at that time by the mailing list participants and Foundation board).  It is also the founders’ belief that if MaidSafe or any other group do not continue to innovate, they should not continue to strive as businesses.  This allows the community to always be presented with the most efficient code and advancements to the system regardless of which entity makes those advances possible.
 
 In this manner, **MaidSafe will ‘eat at the same table’ as all other developers in the SAFE network** and all application providers that will earn revenues via the safecoin model.  It is envisaged that this approach is a very fresh and healthy model with the appropriate levels of risk and reward for all stakeholders.
  
