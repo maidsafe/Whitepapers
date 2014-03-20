@@ -357,8 +357,15 @@ This format allows the tokens to be split into 2248 parts if required. The split
 
 ![Diagram Split SDV](https://raw.github.com/maidsafe/Whitepapers/master/resources/split_sdv_diagram.png)
 
+#### 8.	Safecoin Transaction Structure / Scenarios
+The following diagram illustrates the transaction structure for RPC requests and data structure in Transaction Manager. It has the capability to support moderator model (like multi-signature [ref Escrow] [ref BIP16/17] proposed for Bitcoin) and third party virtual currency (such as MasterCoin protocol [ref MasterCoin]).
 
-#### 8.	Mining Safecoin
+![Transaction Structure](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_structure.png)
+
+The following table illustrates the evolve of user accounts holding safecoin, together with the transaction and safecoin SDV held by Transaction Manager.
+![Transaction Scenarios](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_scenarios.png)
+
+#### 9.	Mining Safecoin
 Every mining interval, the Pmid Manager group around a vault will perform the mining for that vault. The Pmid Manager will generate a Random Attempt Target (R.A.T) based on the following calculation:
 
 R.A.T = Hash( (merkle_tree_root + msg_id) XOR R.A.T prev )    ------   ⑤
@@ -415,12 +422,12 @@ As the issuance of safecoin is capped at 4.3 billion, it is expected that a 50% 
 
 As mentioned in Section 6, when a safecoin is converted into P.O.R, the SDV that represents that token shall have its last owner updated to reflect that it has no owner (set to be hash(kZeroId) ). With this recycling mechanism, it will always be possible to mine safecoins. 
 
-#### 9.	Day 1 Injection
+#### 10.	Day 1 Injection
 To reward investors and developers involved during early stage, it is suggested that certain amount of safecoin is reserved for them. At Day 1 of the network startup, say 10% of safecoin will be injected into network, with the owner to be the investor pool and the developer pool (each has 5% share of total safecoin). As MaidSafe as a company needs to provide the seed network, which makes ourselves a big miner as well, share holders will get rewarded via company mining.
 
 This 10% safecoin will require a storage space of 1TB, given the average SDV size is estimated to be 0.5kB. Vaults holding these SDV will gain P.O.R, which means the same amount of P.O.R also got injected into network. This ensures there is certain amount of P.O.R available across the network for those client only users to startup with, via friends given as gift or purchase from others. As pointed out in the (table POR projection), sufficient POR will be generated via user behaviour during the early stage, it is expected this amount of initial injection will be enough to kick start providing storage service to public. 
 
-#### 10.	Summary
+#### 11.	Summary
 To conclude, MaidSafe proposed the SAFE network, an economic system that contains two types of token and relies on a trusted group. The transfer mechanism is advantageous in many respects and has the functionality to prevent double-spending, while enabling the verification of transactions immediately. Transaction Managers handling SDV data type are included into the SAFE network to manage tokens and transactions. Proof of Resource (P.O.R) is introduced to smooth the exchange of storage space, while safecoin is introduced to incentivise stakeholders throughout the network. The total cap of safecoin is set to be 4.3 billion. With the proposed mining procedure (and assumptions) it is estimated that half the total volume will issued during the first 5 years, with 95% issued after 10 years. End users will mine coins based on their ability to provide computing resources to the network and, in addition to the other benefits offered by SAFE, this will be their main incentive for contributing storage space. When one safecoin is being converted into P.O.R to gain storage space allowance for the user, that safecoin token is recycled in order that other users can claim it via mining. Such re-mining procedure ensures there is always available empty tokens for mining. The tech stack of the token system is illustrated as <diagram Tech Stack>.
 
 ![Diagram Tech Stack](https://raw.github.com/maidsafe/Whitepapers/master/resources/tech_stack.png)
