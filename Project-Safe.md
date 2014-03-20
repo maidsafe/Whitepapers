@@ -212,47 +212,47 @@ So, say for token "nnn" the current token holder is "abc" and he wants to give t
 In this example, the version names represent actual MAID names (or MPID names or whatever). We could of course do the more complicated thing and have abc and xyz represent ImmutableData chunks which the TransactionManagers can create/encrypt/store/get. By doing this, the ImmutableData part becomes the payload part, and SDV can be used as transactions or wallets or anything else.
 
 #### 4.	Transfer Mechanism
-Transfer mechanism is defined as: ‘allowing a transaction (transfer an amount from A's wallet to B's wallet) between two user's persona groups to be completed’. The transaction shall be open and read only to public (allowing upper layer third party broker app to validate there is transaction happening/completed).
+The transfer mechanism is defined as: ‘allowing a transaction (transfer of credit from A's wallet to B's wallet) between two user's persona groups to be completed’. The transaction shall be open and read only to public (allowing upper layer third party broker app to validate there is transaction happening/completed).
 
 The SAFE wallet is defined as : the place holding the credits (and the credit change history) for an account.
 
 The procedure of a transfer (user_A transfers credit to user_B) can be illustrated as :
 
-1.	User A make a function call : user_A.Transfer(user_B, amount, wallet)
-2.	When the MaidManager group of user A receives a request, they :
+1.	User A makes a function call : user_A.Transfer(user_B, amount, wallet)
+2.	When the Maid Manager group of user A receives a request, they :
     
     i)    debit the amount from user A's wallet
     
-    ii)    send a request to the TransactionManager
+    ii)   send a request to the TransactionManager
     
-    iii)    send a notification to the upper layer APP
-3.	When the TransactionManager group receives a notification, they :
+    iii)  send a notification to the upper layer API
+3.	When the Transaction Manager group receives a notification, they :
 
     i)    send a notification to user B's persona
 
-    ii)    create an internally transaction
-4.	When user B's MaidManager group receives a valid notification, they :
+    ii)   create an internal transaction
+4.	When user B's Maid Manager group receives a valid notification they :
 
     i)    send an acknowledgement to the TransactionManager group
 
-    ii)    credit user B's wallet with the amount
+    ii)   credit user B's wallet with the amount
 
 ![Third Party Transaction Validator](https://raw.github.com/maidsafe/Whitepapers/master/resources/third_party_transaction_validator.png)
 
 #### 5.	Proof Of Resource
-On the SAFE network, a user contributes to network by running a vault, which will handle requests and store data for others. The following parameters are used to measure a vault and a user account :
+On the SAFE network, a user contributes to the network by running a vault, which will handle requests and store data for others. The following parameters are used to measure a vault and a user account:
 
-* stored_space : total size of chunks that have been stored to that vault by network
+* stored_space: the total size of chunks that have been stored to that vault by the network
 
-* lost_data : As data is stored on a node it may switch off or be otherwise unavailable, we consider that data lost after the network decides the node has lost it. This is a critically important measure and in no way means the network has lost data. This is a common practice for a node on the network.
+* lost_data: as data is stored on a node it may switch off or be otherwise unavailable, we consider this to be lost data. This is a critically important measure and in no way means the network has actually lost data as replicant copies are always available. This is a common practice for a node on the network.
 
 * healthy_space (h.s.) :  h.s. = stored_spacecur - lost_dataprev    ------   ①
 
-* available_space : the storage space a vault claimed can contribute to network
+* available_space: the storage space a vault claimed (via the user) it can contribute to the network
 
-* data_cost : The same user storing the same chunk will only be charged once (at the rate of 4x chunk size for the first time, to cover the initial cost for the network to keep 4 duplicated copies).  Other users will also be charged for putting the chunk, but at the rate of 1x chunk size.  The charge will be capped at 50 users.  (The subsequent users paying for the chunk covers the case where the initial storer disappears from the network)
+* data_cost: the same user storing the same chunk will only be charged once (at the rate of 4x chunk size for the first time, to cover the initial cost for the network to keep 4 replicant copies).  Other users will also be charged for putting the chunk, but at the rate of 1x chunk size.  The charge will be capped at 50 users.  (The subsequent users paying for the chunk covers the case where the initial storer disappears from the network)
 
-* used_space : total data_cost of all chunks that user put to network
+* used_space: total data_cost of all the chunks that user put to network
 
 The Proof Of Resource (P.O.R) is derived from healthy_space (which is a kind of QoS measurement)
 
