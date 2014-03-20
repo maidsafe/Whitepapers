@@ -246,7 +246,7 @@ On the SAFE network, a user contributes to the network by running a vault, which
 
 * lost_data: as data is stored on a node it may switch off or be otherwise unavailable, we consider this to be lost data. This is a critically important measure and in no way means the network has actually lost data as replicant copies are always available. This is a common practice for a node on the network.
 
-* healthy_space (h.s.) :  h.s. = stored_spacecur - lost_dataprev    ------   ①
+* healthy_space (h.s.) :  h.s. = stored_space - lost_data    ------   ①
 
 * available_space: the storage space a vault claimed (via the user) it can contribute to the network
 
@@ -258,7 +258,7 @@ The Proof Of Resource (P.O.R) is derived from healthy_space (which is a kind of 
 
 * P.O.R will be updated when healthy_space updated in bi-direction
 
-P.O.R =  healthy_space       ------   ②
+Δ P.O.R =  Δ healthy_space       ------   ②
 
 This ensures P.O.R becomes a huge negative when the user transfers out P.O.R and then switches off their vault
 
@@ -330,7 +330,7 @@ given: both data and node_id are evenly distributed
 Once a safecoin has been converted into P.O.R, that token will be recycled, i.e. the token will be marked as not occupied, allowing other user to re-mine it.
 
 #### 7.	Safecoin General
-Safecoin issuance will be capped at 232 (4.3 billion). Unlike P.O.R, which is just an integer number held in the  Maid Account, each safecoin is represented by an SDV, holding a list of owner history. The data structure of such an SDV can be illustrated as : <diagram safecoin SDV structure>
+Safecoin issuance will be capped at 2^32 (4.3 billion). Unlike P.O.R, which is just an integer number held in the  Maid Account, each safecoin is represented by an SDV, holding a list of owner history. The data structure of such an SDV can be illustrated as : <diagram safecoin SDV structure>
 
 | Field | Length | Format |
 | ---------------|:-----------------:|:-----------------:|
@@ -343,7 +343,7 @@ The name of a safecoin is 64 bytes long to allow it to be a network-addressable 
 
 [ 32 bits: Token ID    |   224 bits: ID padding   |   x bits (x <= 248): Subdivision bits   |   248 - x: Random   |   8 bits: Value of x ]
 
-The initial part (Token ID) inherently limits the total number of tokens available to 232 since each token must have a unique ID.
+The initial part (Token ID) inherently limits the total number of tokens available to 2^32 since each token must have a unique ID.
 
 The second part (ID padding) must be predictable (e.g. it could just be all ‘0’s, or it could be the ID concatenated 7 times).  Its purpose is to force all subdivisions of a given coin token the same trusted group of vaults to eliminate the need for network traffic when handling such subdivisions.
 
@@ -353,7 +353,7 @@ The fourth part is random padding.
 
 The fifth part indicates the level of subdivision of the original token, i.e. it contains the value of x.
 
-This format allows the tokens to be split into 2248 parts if required. The splitting process will only allow the token (or subdivided token) to be bisected, so e.g. quartering a token would need to be done in 2 steps. When splitting a token, only the name changes; all other parts are copied to the new subdivisions. The split results in 2 SDVs, each representing a half of the original SDV. This procedure is further illustrated in the following diagram.
+This format allows the tokens to be split into 2^248 parts if required. The splitting process will only allow the token (or subdivided token) to be bisected, so e.g. quartering a token would need to be done in 2 steps. When splitting a token, only the name changes; all other parts are copied to the new subdivisions. The split results in 2 SDVs, each representing a half of the original SDV. This procedure is further illustrated in the following diagram.
 
 ![Diagram Split SDV](https://raw.github.com/maidsafe/Whitepapers/master/resources/split_sdv_diagram.png)
 
