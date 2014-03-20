@@ -1,4 +1,4 @@
-Version 1.1
+Version 1.2
 
 Last Updated 19th March 2014
 
@@ -124,7 +124,7 @@ The size of the seeding network is estimated to be around 10,000 vaults, that be
 
 Third party developers will also be incentivised outside of the token scheme.  Choosing to develop their applications and businesses on the SAFE network will, when the network reaches critical mass, enable them to outperform all incumbents, while providing privacy and security to all their users.  The network code is free to use and there are no upfront charges for API keys or developer programmes.  Developers’ customer acquisition costs will be a fraction of the levels compared to traditional architecture due to the lack of infrastructure costs.
 
-#### SAFE Seed Kick Starter
+#### SAFE Kick Starter
 
 The crowd sale will be operated as follows:
 
@@ -182,9 +182,9 @@ With the SAFE network, it can be assumed that the majority of a close (XOR dista
 
 On the SAFE network, the following rules ensure a trusted group:
 
-* It is hard to have a vault with a particular address (the address of a new vault will be defined by the network using the hash of the vault’s credentials). In addition, each time a vault is switched off and then rejoins the network, it will be assigned a new address. Further more, the node will not be considered as full functional vault till complete the verification period.
-* When a request is emitted from a group, all group member’s signatures will be attached. On the receiver side, not only a routing level find closest verification will be carried out to verify the senders are really closest nodes to the target, but also the public keys for the nodes will be downloaded from the network to validate signatures.
-* The exchange of a vault between different users is not allowed. A vault is allowed to be not linked to an account (unowned) and then linked to an account later (becomes owned). However once linked, that vault cannot be detached.
+* It is hard to have a vault with a particular address (the address of a new vault will be defined by the network using the hash of the vault’s credentials). In addition, each time a vault is switched off and then rejoins the network, it will be assigned a new address. Furthermore, the node will not be considered a full functional vault until the verification period is complete.
+* When a request is emitted from a group, all group member’s signatures will be attached. On the receiver side, a routing level find closest verification will be carried out to verify the senders are really closest nodes to the target. In addition, the public keys for the nodes will be downloaded from the network to validate signatures.
+* The exchange of a vault between different users is not allowed. It is possible for a vault not to be linked to an account (unowned) and then linked to an account later (owned). However, once linked that vault cannot be detached.
 
 Furthermore, there is the RUDP [ref RUDP] layer which encrypts communications between nodes to prevent the message content from being secretly modified by a third party. This ensures the request reflects the real intention of the sender.
 
@@ -192,18 +192,18 @@ Once the majority of the nodes inside the group have sent out a consistent reque
 
 Once the majority of the nodes have decided to perform the same action, the action shall be considered valid.
 
-The Trusted Group feature delivered by the SAFE network ensures the system is secure as long as the majority of the nodes are honest and it is computationally / economically expensive to form a malicious node.
+The Trusted Group feature, delivered by the SAFE network, ensures the system is secure as long as the majority of the nodes are honest and it is computationally / economically expensive to form a malicious node.
 
 #### 3.	Transaction Managers / Structured Data Version
-On the SAFE network, vaults assume various personas or roles [ref Persona], depending on the requests they receive.  For example, the DataManager persona is responsible for managing the integrity and availability of a given piece of data on the network.  A separate persona, TransactionManager, is proposed to handle all the token-related transactions.  A TransactionManager group will be a trusted group of nodes which are closest to any given transaction identity. The TransactionManager is responsible for the business logical to complete a transaction.
+On the SAFE network, vaults assume various personas or roles [ref Persona], depending on the requests they receive.  For example, the Data Manager persona is responsible for managing the integrity and availability of a given piece of data on the network. A separate persona, the Transaction Manager, is proposed to handle all the token-related transactions. A Transaction Manager group will be a trusted group of nodes which are closest to any given transaction identity. The Transaction Manager is responsible for the business logical to complete a transaction.
 
-StructuredDataVersions (SDV) is a data structure which allows the creation and handling of a version tree.  The entire version tree is addressed by a randomly-chosen ID. This data type is managed by the VersionHandler Vault persona.  A VersionHandler group is the trusted group of nodes closest to the SDV ID.  Each entry (version) in the tree will have the format <version_number, immutable data / data_name>. One of the use of this data structure is to store versions of directories on a Virtual Filesystem offered by Maidsafe-Drive.
+Structured Data Versions (SDV) is a data structure which allows the creation and handling of a version tree.  The entire version tree is addressed by a randomly-chosen ID. This data type is managed by the Version Handler vault persona.  A Version Handler group is the trusted group of nodes closest to the SDV ID.  Each entry (version) in the tree will have the format <version_number, immutable data / data_name>. One use for this data structure is to store versions of directories on a Virtual Filesystem offered by Maidsafe-Drive.
 
-Based on the token types, Transaction Manager persona will be creating variation of SDV types. SDV related to tokens and transactions can only be created and updated by the TransactionManager group around it. Random id associated with the version tree can be directly used as the token name or can be related to the transaction id. With different payload inside SDV, it can be used for various purposes; as a transaction, as a token itself, as a wallet.
+Based on the token types, the Transaction Manager persona will be creating variation of SDV types. SDV related to tokens and transactions can only be created and updated by the Transaction Manager group around it. The Random ID associated with the version tree can be directly used as the token name, or can be related to the transaction ID. If the SDV contains different payloads it can be used in different ways; as a transaction, as a token itself, as a wallet.
 
-As transaction Manager for a token are group of Vaults close to the token name, the same group will also act as Version handler for the SDV tree which Transaction Manager will be handling (or can be separated by introducing an additional layer of Hash(token name)).
+The Transaction Managers for a token are group of Vaults close to the token name, the same group will also act as Version Handlers for the SDV tree which the Transaction Manager will be handling (or can be separated by introducing an additional layer of Hash(token name)).
 
-Transaction Manager’s functionality can be further detailed by taking an example of a Token creation and Token exchange mechanism. If a new token is mined, a SDV tree with name same as token identity, will created by Transaction Manager. 
+The Transaction Manager’s functionality can be further detailed by taking an example of a Token creation and Token exchange mechanism. If a new token is mined, a SDV tree with name same as token identity, will created by Transaction Manager. 
 
 The first version (root of tree) will be <0 (id with all bits zero), Hash(name of token holder)> (using Hash of holder name to prevent leaking user info). As only the TransactionManager can update the versions, they "own" SDV in the network sense, but the current tip-of-tree inside represents the token holder (creditor). Transaction Manager only authorise the owner of the token to do a transaction.
 
