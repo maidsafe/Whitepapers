@@ -246,7 +246,7 @@ On the SAFE network, a user contributes to the network by running a vault, which
 
 * lost_data: as data is stored on a node it may switch off or be otherwise unavailable, we consider this to be lost data. This is a critically important measure and in no way means the network has actually lost data as replicant copies are always available. This is a common practice for a node on the network.
 
-* healthy_space (h.s.) :  h.s. = stored_spacecur - lost_dataprev    ------   ①
+* healthy_space (h.s.) :  h.s. = stored_space - lost_data    ------   ①
 
 * available_space: the storage space a vault claimed (via the user) it can contribute to the network
 
@@ -258,14 +258,14 @@ The Proof Of Resource (P.O.R) is derived from healthy_space (which is a kind of 
 
 * P.O.R will be updated when healthy_space updated in bi-direction
 
-P.O.R =  healthy_space       ------   ②
+Δ P.O.R =  Δ healthy_space       ------   ②
 
-This ensures P.O.R becomes a huge negative when the user transfers out P.O.R and then switches off their vault
+This ensures P.O.R becomes huge negative when user transfer out P.O.R and then switch off the vault
 
 * P.O.R will be checked when a user tries to PUT data.
 (used_space + data_cost ) < P.O.R      ------   ③
 
-A user’s initial allowance will be granted by setting used_space to negative claimed available_space. If any cheating is detected, the used_space will be changed to reflect that.
+A user’s Initial allowance will be granted by setting used_space to negative claimed available_space. If any cheating is detected, the used_space will be changed to reflect that.
 
 This will also cover for situations when a user’s P.O.R drops low by allowing the user to mutate his free allowance data.
 
@@ -273,10 +273,10 @@ This will also cover for situations when a user’s P.O.R drops low by allowing 
 
 * P.O.R shall be an int in a unit directly derived from size unit KB (MB ...)
 
-* The Maid Account will be the wallet of the P.O.R, and the Maid Manager group will be responsible for 
-processing any updates.
+* MaidAccount will be the wallet to the P.O.R, and MaidManager group will be responsible for 
+the updating.
 
-* P.O.R shall be considered as a standard unit being recognized by all nodes across the SAFE network.
+* P.O.R shall be considered as a standard unit being recognized by all nodes across the SAFE  network.
 
 | User A |   | | User B |  |  | 
 | ---------------|:-----------------:|:-----------------:|:-----------------:|:-----------------:|:-----------------:|
@@ -287,12 +287,12 @@ processing any updates.
 |Sell 20 P.O.R to User B	| (20, 50, 30) | 10 | Buy 20 P.O.R from User A | (0, 0, 20) | 20 |
 |stored_space decreased by 10. Q.O.S drop or stored chunk removed by network | (20, 40, 20) | 0 | Store 10 data and get picked to store 10 | (10, 10, 30) | 20 |
 
-#### 6.	Economic System With Two Types Of Token
-P.O.R is proposed in order to facilitate the exchange of storage space on the SAFE network. However, as it doesn't have a predictable cap number, it may not be considered a genuine virtual currency. To provide a more robust form of exchange, MaidSafe proposes a token system that is totally independent of P.O.R, called safecoin. Safecoin will have a predicatable cap and will be injected into network using the storage space related mining procedure.
+#### 6.	Economic system with two types of token
+P.O.R is proposed in order to facilitate the exchange of storage space on the SAFE network. However, as it doesn't have a predictable cap number, it may not be able to be considered as a genuine token based virtual currency. To provide a more robust currency, MaidSafe proposes to have a token system that is totally independent of P.O.R, called safecoin. Safecoin will have a predicatable cap and will be injected into network using the storage space related mining procedure.
 
-A bridge (converting rate) between P.O.R and safecoin can be established by the market solely. With third party upper layer broker applications, it will be possible to use safecoin to buy P.O.R or vice versa (user_A give safecoin to user_B in exchange for user_B's P.O.R). It is expected that the per unit value of P.O.R will keep decreasing, while the per unit value of safecoin will continue to rise. In this way, it will be possible to buy more and more P.O.R with one safecoin. Safecoin will only be stored in the Maid Account wallet, this can only be updated by the Maid Manager group.
+A bridge (converting rate) between P.O.R and safecoin can be established by the market solely. With third party upper layer broker applications, it will be possible to use safecoin to buy P.O.R or vice versa (user_A give safecoin to user_B in exchange for user_B's P.O.R). We expect the per unit value of P.O.R keeps decreasing, meanwhile the per unit value of safecoin keeps rising. i.e. one safecoin could buy more and more P.O.R. Safecoin is also be kept in maid account wallet, which can only be  updated by the MaidManager group.
 
-The value one safecoin represents will be recognised by all peers across the network and outside the network. If the economic system works as intended, safecoin will become a ‘virtual currency’ with the SAFE network being used to complete all transactions. Meanwhile, P.O.R will solely be used for exchanging space allowance among users.
+The value of one safecoin represents will be recognized by all peers across the network and outside the network. If the economic system works as intended, safecoin will become a ‘virtual currency’ with the SAFE network being used to complete all transactions. Meanwhile P.O.R will solely be used for exchanging space allowance among users.
 
 A projection of P.O.R. is estimated as :
 
@@ -309,13 +309,13 @@ A projection of P.O.R. is estimated as :
 | 1382400 | 4 | 0.2 | 0.2 | 1382400 | 25600 | 54 | 54 |
 
 
-To prevent a potential shortfall of P.O.R, it is proposed that safecoin can be converted into P.O.R directly (network level). However, to maintain a predictable cap on the number of safecoins, the network will not allow P.O.R to be converted back into safecoin.
+To prevent a potential shortfall of P.O.R, it is proposed that safecoin can be converted into P.O.R directly (network level). However, to maintain the cap number of safecoin predictable, the network will not allow P.O.R to be converted back into safecoin.
 
-The conversion rate (safecoin => P.O.R ) can be established as:
+The conversion rate (safecoin => P.O.R ) can be established as :
 
 conversion rate (P.O.R / Token) = PT / NT  ≈ (PT<sub>local</sub> * (AS / AD<sub>local</sub> ) ) / NT    ------   ④
 
-where: PT is the current total of P.O.R across the network
+where : PT is the current total of P.O.R across the network
 
 NT is the cap number of token
 
@@ -325,12 +325,12 @@ AS is the total address space
 
 AD<sub>local</sub> is the average address distance among the local group                      
 
-given: both data and node_id are evenly distributed
+given : both data and node_id are evenly distributed
 
-Once a safecoin has been converted into P.O.R, that token will be recycled, i.e. the token will be marked as not occupied, allowing other user to re-mine it.
+Once a safecoin has been converted into P.O.R, that token will be released, i.e. the token will be marked as not occupied, allowing other user to re-mine it.
 
-#### 7.	Safecoin General
-Safecoin issuance will be capped at 232 (4.3 billion). Unlike P.O.R, which is just an integer number held in the  Maid Account, each safecoin is represented by an SDV, holding a list of owner history. The data structure of such an SDV can be illustrated as : <diagram safecoin SDV structure>
+#### 7.	Safecoin Data Structure
+Safecoin is capped at 2^32 (4.3 billion). Unlike P.O.R which is just an integer number held in maid_account, each safecoin is represented by an SDV, holding a list of owner history. The data structure of such an SDV can be illustrated as : <diagram safecoin SDV structure>
 
 | Field | Length | Format |
 | ---------------|:-----------------:|:-----------------:|
@@ -339,49 +339,57 @@ Safecoin issuance will be capped at 232 (4.3 billion). Unlike P.O.R, which is ju
 | version n-1 | 72 Bytes | [version_num, hash(prev_owner)] |
 |version n | 72 Bytes | [version_num, hash(cur_owner)] |
 
-The name of a safecoin is 64 bytes long to allow it to be a network-addressable object. However, the name has a particular format:
+The name of an safecoin is 64 bytes long to allow it to be a network-addressable object.  However, the name has a particular format:
 
 [ 32 bits: Token ID    |   224 bits: ID padding   |   x bits (x <= 248): Subdivision bits   |   248 - x: Random   |   8 bits: Value of x ]
 
-The initial part (Token ID) inherently limits the total number of tokens available to 232 since each token must have a unique ID.
+The initial part (Token ID) inherently limits the total number of tokens available to 2^32 since each token must have a unique ID.
 
 The second part (ID padding) must be predictable (e.g. it could just be all ‘0’s, or it could be the ID concatenated 7 times).  Its purpose is to force all subdivisions of a given coin token the same trusted group of vaults to eliminate the need for network traffic when handling such subdivisions.
 
-The third part defines the subdivision name. For example, if x == 1 (regardless of whether the value of that bit is 0 or 1) then that token represents a half of the original token.
+The third part defines the subdivision name.  For example, if x == 1 (regardless of whether the value of that bit is 0 or 1) then that token represents a half of the original token.
 
 The fourth part is random padding.
 
 The fifth part indicates the level of subdivision of the original token, i.e. it contains the value of x.
 
-This format allows the tokens to be split into 2248 parts if required. The splitting process will only allow the token (or subdivided token) to be bisected, so e.g. quartering a token would need to be done in 2 steps. When splitting a token, only the name changes; all other parts are copied to the new subdivisions. The split results in 2 SDVs, each representing a half of the original SDV. This procedure is further illustrated in the following diagram.
+This format allows us to split the original token into 2^248 parts if required.  The splitting process will only allow the token (or subdivided token) to be bisected, so e.g. quartering a token would need to be done in 2 steps.  When splitting a token, only the name changes; all other parts are copied to the new subdivisions.  The split results in 2 SDVs, each representing a half of the original SDV. This procedure is further illustrated in the following diagram.
 
 ![Diagram Split SDV](https://raw.github.com/maidsafe/Whitepapers/master/resources/split_sdv_diagram.png)
 
+#### 8.	Safecoin Transaction Structure / Scenarios
+The following diagram illustrates the transaction structure for RPC requests and data structure in Transaction Manager. It has the capability to support moderator model (like multi-signature [ref Escrow] [ref BIP16/17] proposed for Bitcoin) and third party virtual currency (such as MasterCoin protocol [ref MasterCoin]).
 
-#### 8.	Mining Safecoin
-Every mining interval, the Pmid Manager group around a vault will perform the mining for that vault. The Pmid Manager will generate a Random Attempt Target (R.A.T) based on the following calculation:
+![Transaction Structure](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_structure.png)
+
+The following table illustrates the evolve of user accounts holding safecoin, together with the transaction and safecoin SDV held by Transaction Manager.
+![Transaction Scenarios](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_scenarios.png)
+
+
+#### 9.	Mining safecoin
+Every mining interval, the PmidManager (P.M) group around a vault will perform the mining for that vault. P.M will generate a Random Attempt Target (R.A.T) based on the following calculation :
 
 R.A.T = Hash( (merkle_tree_root + msg_id) XOR R.A.T prev )    ------   ⑤
 
 where : merkle_tree_root is generated from all the chunks stored on that vault
 
-msg_id is the agreed random ID among the Pmid Manager group.
+msg_id is the agreed random id among the P.M group.
 
-The R.A.T will then be sent to the Transaction Manager as a SDV creation request, claiming the ownership of that SDV on behalf of that vault.
+The R.A.T will then be sent to TransactionManager (T.M) as a SDV creation request, claiming the ownership of that SDV on behalf of that vault.
 
-The Transaction Manager will try to create an SDV with that name, and the last owner shall be the hash (maid_name).
+T.M will try to create an SDV with that name, and the last owner shall be the hash(maid_name).
 
-If that SDV already existed, the Transaction Manager will then try to update all that SDV's sub-dividents which are not taken yet.
+If that SDV already existed, T.M. will then try to update all that SDV's sub-dividents which are not taken yet.
 
-The Maid Manager group of the maid_name will be notified when the Transaction Manager created or updated an SDV successfully, otherwise the request is muted.
+The MaidManager group of the maid_name will be notified when T.M. created or updated SDV successfully, otherwise the request is muted.
 
-The mining interval allowed for a vault is determined by its contribution to the network. The interval is calculated as follows:
+The mining interval allowed for a vault is determined by its contribution to the network. The interval is calculated as :
   
 when healthy_space is greater than 4GB : mining_interval = 25 - min(24, healthy_space / 4GB) (hour)      ------   ⑥
 
-i.e. the quickest mining speed is one attempt per hour and the slowest is one attempt per day (24 hours)
+i.e. the quickest mining speed is one attempt per hour, and the slowest is one attempt per day (24 hours)
 
-Continuous connection time of each vault is used, i.e. when a vault is switched off / disconnected, the interval timer will is stopped and reset, generating no coins for the offline vault.
+Continuous connection time of vault is used, i.e. when vault switched off / disconnected, the interval timer will reset and stopped, generating no coins for the offline vault.
 
 Following is the estimation of MaidSafe network size, the average mining attempts and the total attempts along time : (table network projection)
 
@@ -409,18 +417,18 @@ Given the collision probability as : (table collision probability) where N is th
 | 90% | 2.3 N |
 | 95% | 3 N |
 
-As the issuance of safecoin is capped at 4.3 billion, it is expected that a 50% collision rate will be reached after 5 years. 95% collision rate will be reached after 10 years, as illustrated in the following diagram. <diagram Coin Distribution Projection>
+As the safecoin is capped at 4.3 billion, it is expected that 50% collision rate will be reached after 5 years. 95% collision rate will be reached after 10 years, as illustrated in the following diagram. <diagram Coin Distribution Projection>
 
 ![Diagram Projected Coin Distribution](https://raw.github.com/maidsafe/Whitepapers/master/resources/projected_coin_distribution_over_time.png)
 
-As mentioned in Section 6, when a safecoin is converted into P.O.R, the SDV that represents that token shall have its last owner updated to reflect that it has no owner (set to be hash(kZeroId) ). With this recycling mechanism, it will always be possible to mine safecoins. 
+As mentioned in Section 6, when a safecoin is converted into P.O.R, the SDV represents that token shall have its last owner to be updated to non-taken (set to be hash(kZeroId) ). With this recycling mechanism, there will always be non-mined coins available on market. 
 
-#### 9.	Day 1 Injection
+#### 10.	Day 1 Injection
 To reward investors and developers involved during early stage, it is suggested that certain amount of safecoin is reserved for them. At Day 1 of the network startup, say 10% of safecoin will be injected into network, with the owner to be the investor pool and the developer pool (each has 5% share of total safecoin). As MaidSafe as a company needs to provide the seed network, which makes ourselves a big miner as well, share holders will get rewarded via company mining.
 
 This 10% safecoin will require a storage space of 1TB, given the average SDV size is estimated to be 0.5kB. Vaults holding these SDV will gain P.O.R, which means the same amount of P.O.R also got injected into network. This ensures there is certain amount of P.O.R available across the network for those client only users to startup with, via friends given as gift or purchase from others. As pointed out in the (table POR projection), sufficient POR will be generated via user behaviour during the early stage, it is expected this amount of initial injection will be enough to kick start providing storage service to public. 
 
-#### 10.	Summary
+#### 11.	Summary
 To conclude, MaidSafe proposed the SAFE network, an economic system that contains two types of token and relies on a trusted group. The transfer mechanism is advantageous in many respects and has the functionality to prevent double-spending, while enabling the verification of transactions immediately. Transaction Managers handling SDV data type are included into the SAFE network to manage tokens and transactions. Proof of Resource (P.O.R) is introduced to smooth the exchange of storage space, while safecoin is introduced to incentivise stakeholders throughout the network. The total cap of safecoin is set to be 4.3 billion. With the proposed mining procedure (and assumptions) it is estimated that half the total volume will issued during the first 5 years, with 95% issued after 10 years. End users will mine coins based on their ability to provide computing resources to the network and, in addition to the other benefits offered by SAFE, this will be their main incentive for contributing storage space. When one safecoin is being converted into P.O.R to gain storage space allowance for the user, that safecoin token is recycled in order that other users can claim it via mining. Such re-mining procedure ensures there is always available empty tokens for mining. The tech stack of the token system is illustrated as <diagram Tech Stack>.
 
 ![Diagram Tech Stack](https://raw.github.com/maidsafe/Whitepapers/master/resources/tech_stack.png)
