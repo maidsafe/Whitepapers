@@ -1,7 +1,5 @@
 Version 1.2
 
-Last Updated 19th March 2014
-
 ## MaidSafe.net announces project SAFE to the community  ##
  
 Existing Internet infrastructure is increasingly unable to cope with the demands placed on it by over [2.4 billion](http://www.internetworldstats.com/stats.htm) connected people, a number that is predicted to grow to [3.6 billion](http://newsroom.cisco.com/release/1197391/) by 2017. Today's architecture, where central intermediaries (servers) store and provide access to data is expensive and inefficient. Data centres use between [1.1% and 1.5%](http://www.koomey.com/post/8323374335) of the world's electricity (growing at 60% per annum) and represent significant expenditure for data centre owners, providers and businesses, who all have to pay to host user data and maintain the infrastructure. Security of user data has proven to be nearly impossible in today's networks with almost weekly reports of ID and password thefts.
