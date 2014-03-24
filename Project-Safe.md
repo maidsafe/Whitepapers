@@ -237,7 +237,7 @@ The procedure of a transfer (user_A transfers credit to user_B) can be illustrat
 
     ii)   credit user B's wallet with the amount
 
-![Third Party Transaction Validator](https://raw.github.com/maidsafe/Whitepapers/master/resources/third_party_transaction_validator.png)
+![Transfer Mechanism](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transfer_mechanism_diagram.png)
 
 #### 5.	Proof Of Resource
 On the SAFE network, a user contributes to the network by running a vault, which will handle requests and store data for others. The following parameters are used to measure a vault and a user account:
