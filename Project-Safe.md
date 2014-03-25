@@ -178,12 +178,13 @@ The SAFE network [ref Network] utilises a mathematically complete, peer-to-peer 
 Bitcoin [ref BitCoin] has proved the ability of crypto currencies to disrupt the status quo.  Bitcoin proposed and executed a very innovative idea, coupled with a well-considered system design based on the block-chain and proof-of-work concepts. In essence, Bitcoin is a partially-decentralised (due to the use of the block chain) digital currency on a centralised network. MaidSafe propose a token based economic system on the SAFE network. In effect, a decentralised digital currency system on decentralised network. 
  
 #### 2.	Trusted Group
-With the SAFE network, it can be assumed that the majority of a close (XOR distance as defined by Kademlia) group of nodes is trustable. While not impossible to generate a majority of malicious nodes in a close group around a particular target, it should be considered computationally unfeasible.
+With the SAFE network, it can be assumed that the majority of a close group of nodes is trustable. While not impossible to generate a majority of malicious nodes in a close group around a particular target, it should be considered computationally unfeasible.
 
 On the SAFE network, the following rules ensure a trusted group:
 
 * It is hard to have a vault with a particular address (the address of a new vault will be defined by the network using the hash of the vault’s credentials). In addition, each time a vault is switched off and then rejoins the network, it will be assigned a new address. Furthermore, the node will not be considered a full functional vault until the verification period is complete.
 * When a request is emitted from a group, all group member’s signatures will be attached. On the receiver side, a routing level find closest verification will be carried out to verify the senders are really closest nodes to the target. In addition, the public keys for the nodes will be downloaded from the network to validate signatures.
+* The close group is not formed in a deterministic way (i.e. based on XOR distance as defined by Kademlia only). The close group of a target will only be formed when the target goes to the network. Unless the target is pre-known, it can not be tell whether two nodes are close.
 * The exchange of a vault between different users is not allowed. It is possible for a vault not to be linked to an account (unowned) and then linked to an account later (owned). However, once linked that vault cannot be detached.
 
 Furthermore, there is the RUDP [ref RUDP] layer which encrypts communications between nodes to prevent the message content from being secretly modified by a third party. This ensures the request reflects the real intention of the sender.
