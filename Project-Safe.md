@@ -168,9 +168,9 @@ An early project on the network will be a decentralised digital voting system.  
 
 # APPENDIX #
 ## Token System on SAFE Network  ##
-Version 1.2
+Version 1.3
 
-Last Updated 19 March 2014
+Last Updated 25 March 2014
 
 #### 1.	Introduction
 The SAFE network [ref Network] utilises a mathematically complete, peer-to-peer Public Key Infrastructure (PKI) authorisation on an autonomous network [ref Autonomous], secured key-value storage and reliable Kademlia based routing [ref Routing]. The network is designed to be decentralised and has the ability to get rid of Domain Name System (DNS). The PKI solution deployed within the SAFE network validates a user’s identity with mathematical certainty.
@@ -252,7 +252,7 @@ On the SAFE network, a user contributes to the network by running a vault, which
 
 * available_space: the storage space a vault claimed (via the user) it can contribute to the network
 
-* data_cost: the same user storing the same chunk will only be charged once (at the rate of 4x chunk size for the first time, to cover the initial cost for the network to keep 4 replicant copies).  Other users will also be charged for putting the chunk, but at the rate of 1x chunk size.  The charge will be capped at 50 users.  (The subsequent users paying for the chunk covers the case where the initial storer disappears from the network)
+* data_cost: data_cost will be calculated as the data_size that user stored to network. It will be refunded once user delete the stored data. The client application has a local level deduplication, which will prevent a user to be charged twice when storing the same data again to the network.
 
 * used_space: total data_cost of all the chunks that user put to network
 
