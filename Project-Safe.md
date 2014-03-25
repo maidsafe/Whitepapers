@@ -311,26 +311,6 @@ A projection of P.O.R. is estimated as :
 | 1382400 | 4 | 0.2 | 0.2 | 1382400 | 25600 | 54 | 54 |
 
 
-To prevent a potential shortfall of P.O.R, it is proposed that safecoin can be converted into P.O.R directly (network level). However, to maintain a predictable cap on the number of safecoins, the network will not allow P.O.R to be converted back into safecoin.
-
-The conversion rate (safecoin => P.O.R ) can be established as:
-
-conversion rate (P.O.R / Token) = PT / NT  ≈ (PT<sub>local</sub> * (AS / AD<sub>local</sub> ) ) / NT    ------   ④
-
-where: PT is the current total of P.O.R across the network
-
-NT is the cap number of token
-
-PT<sub>local</sub> is the current average P.O.R across the local group
-
-AS is the total address space
-
-AD<sub>local</sub> is the average address distance among the local group                      
-
-given: both data and node_id are evenly distributed
-
-Once a safecoin has been converted into P.O.R, that token will be recycled, i.e. the token will be marked as not occupied, allowing other user to re-mine it.
-
 #### 7.	Safecoin General
 Safecoin issuance will be capped at 2^32 (4.3 billion). Unlike P.O.R, which is just an integer number held in the  Maid Account, each safecoin is represented by an SDV, holding a list of owner history. The data structure of such an SDV can be illustrated as : <diagram safecoin SDV structure>
 
@@ -422,7 +402,6 @@ As the issuance of safecoin is capped at 4.3 billion, it is expected that a 50% 
 
 ![Diagram Projected Coin Distribution](https://raw.github.com/maidsafe/Whitepapers/master/resources/projected_coin_distribution_over_time.png)
 
-As mentioned in Section 6, when a safecoin is converted into P.O.R, the SDV that represents that token shall have its last owner updated to reflect that it has no owner (set to be hash(kZeroId) ). With this recycling mechanism, it will always be possible to mine safecoins. 
 
 #### 10.	Day 1 Injection
 To reward investors and developers involved during early stage, it is suggested that certain amount of safecoin is reserved for them. At Day 1 of the network startup, say 10% of safecoin will be injected into network, with the owner to be the investor pool and the developer pool (each has 5% share of total safecoin). As MaidSafe as a company needs to provide the seed network, which makes ourselves a big miner as well, share holders will get rewarded via company mining.
@@ -430,7 +409,7 @@ To reward investors and developers involved during early stage, it is suggested 
 This 10% safecoin will require a storage space of 1TB, given the average SDV size is estimated to be 0.5kB. Vaults holding these SDV will gain P.O.R, which means the same amount of P.O.R also got injected into network. This ensures there is certain amount of P.O.R available across the network for those client only users to startup with, via friends given as gift or purchase from others. As pointed out in the (table POR projection), sufficient POR will be generated via user behaviour during the early stage, it is expected this amount of initial injection will be enough to kick start providing storage service to public. 
 
 #### 11.	Summary
-To conclude, MaidSafe proposed the SAFE network, an economic system that contains two types of token and relies on a trusted group. The transfer mechanism is advantageous in many respects and has the functionality to prevent double-spending, while enabling the verification of transactions immediately. Transaction Managers handling SDV data type are included into the SAFE network to manage tokens and transactions. Proof of Resource (P.O.R) is introduced to smooth the exchange of storage space, while safecoin is introduced to incentivise stakeholders throughout the network. The total cap of safecoin is set to be 4.3 billion. With the proposed mining procedure (and assumptions) it is estimated that half the total volume will issued during the first 5 years, with 95% issued after 10 years. End users will mine coins based on their ability to provide computing resources to the network and, in addition to the other benefits offered by SAFE, this will be their main incentive for contributing storage space. When one safecoin is being converted into P.O.R to gain storage space allowance for the user, that safecoin token is recycled in order that other users can claim it via mining. Such re-mining procedure ensures there is always available empty tokens for mining. The tech stack of the token system is illustrated as <diagram Tech Stack>.
+To conclude, MaidSafe proposed the SAFE network, an economic system that contains two types of token and relies on a trusted group. The transfer mechanism is advantageous in many respects and has the functionality to prevent double-spending, while enabling the verification of transactions immediately. Transaction Managers handling SDV data type are included into the SAFE network to manage tokens and transactions. Proof of Resource (P.O.R) is introduced to smooth the exchange of storage space, while safecoin is introduced to incentivise stakeholders throughout the network. The total cap of safecoin is set to be 4.3 billion. With the proposed mining procedure (and assumptions) it is estimated that half the total volume will issued during the first 5 years, with 95% issued after 10 years. End users will mine coins based on their ability to provide computing resources to the network and, in addition to the other benefits offered by SAFE, this will be their main incentive for contributing storage space. The tech stack of the token system is illustrated as <diagram Tech Stack>.
 
 ![Diagram Tech Stack](https://raw.github.com/maidsafe/Whitepapers/master/resources/tech_stack.png)
 
