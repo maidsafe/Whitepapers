@@ -116,13 +116,13 @@ It is proposed that code commits and third party projects be chosen by polling t
 The mining speed per vault is *projected* as:
 
 | Time | Number of coins |
-| ---------------|:-----------------:|
-|first day:	| 3 |
-|first week: | 28 |
-|first month: |	150 |
-|first year: |	3600 |
+| -------------|:---------------:|
+|first day	| 800 |
+|first week | 1800 |
+|first month |	4000 |
+|first year |	19000 |
 
-The size of the seeding network is estimated to be around 10,000 vaults, that being the case it is projected that the monthly income will be around 1.5M coins and 36M in total during the first year.
+The size of the seeding network is estimated to be around 2,000 vaults, that being the case it is projected that the first month income will be around 8M coins and 38M in total during the first year.
 
 Third party developers will also be incentivised outside of the token scheme.  Choosing to develop their applications and businesses on the SAFE network will, when the network reaches critical mass, enable them to outperform all incumbents, while providing privacy and security to all their users.  The network code is free to use and there are no upfront charges for API keys or developer programmes.  Developers’ customer acquisition costs will be a fraction of the levels compared to traditional architecture due to the lack of infrastructure costs.
 
