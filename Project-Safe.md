@@ -170,7 +170,7 @@ An early project on the network will be a decentralised digital voting system.  
 ## Token System on SAFE Network  ##
 Version 1.3
 
-Last Updated 25 March 2014
+Last Updated 26 March 2014
 
 #### 1.	Introduction
 The SAFE network [ref Network] utilises a mathematically complete, peer-to-peer Public Key Infrastructure (PKI) authorisation on an autonomous network [ref Autonomous], secured key-value storage and reliable Kademlia based routing [ref Routing]. The network is designed to be decentralised and has the ability to get rid of Domain Name System (DNS). The PKI solution deployed within the SAFE network validates a user’s identity with mathematical certainty.
@@ -196,24 +196,10 @@ Once the majority of the nodes have decided to perform the same action, the acti
 
 The Trusted Group feature, delivered by the SAFE network, ensures the system is secure as long as the majority of the nodes are honest and it is computationally / economically expensive to form a malicious node.
 
-#### 3.	Transaction Managers / Structured Data Version
-On the SAFE network, vaults assume various personas or roles [ref Persona], depending on the requests they receive.  For example, the Data Manager persona is responsible for managing the integrity and availability of a given piece of data on the network. A separate persona, the Transaction Manager, is proposed to handle all the token-related transactions. A Transaction Manager group will be a trusted group of nodes which are closest to any given transaction identity. The Transaction Manager is responsible for the business logical to complete a transaction.
 
-Structured Data Versions (SDV) is a data structure which allows the creation and handling of a version tree.  The entire version tree is addressed by a randomly-chosen ID. This data type is managed by the Version Handler vault persona.  A Version Handler group is the trusted group of nodes closest to the SDV ID.  Each entry (version) in the tree will have the format `<version_number, immutable data / data_name>`. One use for this data structure is to store versions of directories on a Virtual Filesystem offered by Maidsafe-Drive.
+#### 3.	Transfer Mechanism
+On the SAFE network, vaults assume various personas or roles [ref Persona], depending on the requests they receive.  For example, the DataManager persona is responsible for managing the integrity and availability of a given piece of data on the network.  A separate persona, TransactionManager, is proposed to handle all the token-related transactions.  A TransactionManager group will be a trusted group of nodes which are closest to any given transaction identity. The TransactionManager is responsible for the business logical to complete a transaction.
 
-Based on the token types, the Transaction Manager persona will be creating variation of SDV types. SDV related to tokens and transactions can only be created and updated by the Transaction Manager group around it. The Random ID associated with the version tree can be directly used as the token name, or can be related to the transaction ID. If the SDV contains different payloads it can be used in different ways; as a transaction, as a token itself, as a wallet.
-
-The Transaction Managers for a token are group of Vaults close to the token name, the same group will also act as Version Handlers for the SDV tree which the Transaction Manager will be handling (or can be separated by introducing an additional layer of Hash(token name)).
-
-The Transaction Manager’s functionality can be further detailed by considering the relationship between the token creation and token exchange mechanism. If a new token is mined, a SDV tree with the same name as the token identity will created by the Transaction Manager. 
-
-The first version (root of tree) will be <0 (id with all bits zero), Hash(name of the token holder)> (using Hash of the holder name to prevent leaking user info). As only the Transaction Manager can update the versions, they 'own' the SDV in the network sense, but the current tip-of-tree inside represents the token holder (creditor). The Transaction Manager only authorises the owner of the token to carry out a transaction.
-
-So, say for token "nnn" the current token holder is "abc" and he wants to give the token to "xyz". abc sends a valid request : "Token Transfer Request abc to xyz for token nnn" to the Transaction Managers at "nnn". The Transaction Managers get the tip-of-tree for SDV "nnn" and check it says something like <999, hash(abc)>.  If hash(abc) is not the last owner of the token, it doesn't have the right to transfer the token and the request fails. If hash(abc) is listed as the last version of the tree, the transaction will progress and the new version will be created by the Transaction Managers and will be stored on the Version Handler as <1000, hash(xyz)> and xyz is now the token holder(owner). Anyone can get these versions to validate the transaction including abc and xyz themselves.
-
-In this example, the version names represent actual MAID names (or MPID names or whatever). We could of course do the more complicated thing and have abc and xyz represent ImmutableData chunks which the TransactionManagers can create/encrypt/store/get. By doing this, the ImmutableData part becomes the payload part, and SDV can be used as transactions or wallets or anything else.
-
-#### 4.	Transfer Mechanism
 The transfer mechanism is defined as: ‘allowing a transaction (transfer of credit from A's wallet to B's wallet) between two user's persona groups to be completed’. The transaction shall be open and read only to public (allowing upper layer third party broker app to validate there is transaction happening/completed).
 
 The SAFE wallet is defined as : the place holding the credits (and the credit change history) for an account.
@@ -241,7 +227,7 @@ The procedure of a transfer (user_A transfers credit to user_B) can be illustrat
 
 ![Transfer Mechanism](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transfer_mechanism_diagram.png)
 
-#### 5.	Proof Of Resource
+#### 4.	Proof Of Resource
 On the SAFE network, a user contributes to the network by running a vault, which will handle requests and store data for others. The following parameters are used to measure a vault and a user account:
 
 * stored_space: the total size of chunks that have been stored to that vault by the network
@@ -289,7 +275,7 @@ processing any updates.
 |Sell 20 P.O.R to User B	| (20, 50, 30) | 10 | Buy 20 P.O.R from User A | (0, 0, 20) | 20 |
 |stored_space decreased by 10. Q.O.S drop or stored chunk removed by network | (20, 40, 20) | 0 | Store 10 data and get picked to store 10 | (10, 10, 30) | 20 |
 
-#### 6.	Economic System With Two Types Of Token
+#### 5.	Economic System With Two Types Of Token
 P.O.R is proposed in order to facilitate the exchange of storage space on the SAFE network. However, as it doesn't have a predictable cap number, it may not be considered a genuine virtual currency. To provide a more robust form of exchange, MaidSafe proposes a token system that is totally independent of P.O.R, called safecoin. Safecoin will have a predicatable cap and will be injected into network using the storage space related mining procedure.
 
 A bridge (converting rate) between P.O.R and safecoin can be established by the market solely. With third party upper layer broker applications, it will be possible to use safecoin to buy P.O.R or vice versa (user_A give safecoin to user_B in exchange for user_B's P.O.R). It is expected that the per unit value of P.O.R will keep decreasing, while the per unit value of safecoin will continue to rise. In this way, it will be possible to buy more and more P.O.R with one safecoin. Safecoin will only be stored in the Maid Account wallet, this can only be updated by the Maid Manager group.
@@ -311,15 +297,18 @@ A projection of P.O.R. is estimated as :
 | 1382400 | 4 | 0.2 | 0.2 | 1382400 | 25600 | 54 | 54 |
 
 
-#### 7.	Safecoin General
-Safecoin issuance will be capped at 2^32 (4.3 billion). Unlike P.O.R, which is just an integer number held in the  Maid Account, each safecoin is represented by an SDV, holding a list of owner history. The data structure of such an SDV can be illustrated as : <diagram safecoin SDV structure>
+#### 6.	Safecoin Data Structure
+Safecoin issuance will be capped at 2^32 (4.3 billion). Unlike P.O.R, which is just an integer number held in the  Maid Account, each safecoin is represented by a special token type data. The data structure of such can be illustrated as :
 
-| Field | Length | Format |
-| ---------------|:-----------------:|:-----------------:|
-|name | 64 Bytes | See below |
-| metadata_field |  | |
-| version n-1 | 72 Bytes | [version_num, hash(prev_owner)] |
-|version n | 72 Bytes | [version_num, hash(cur_owner)] |
+| Field | Content |
+| ---------------|:-----------------:|
+|Name | See below |
+|Prev Owner | previous_owner |
+|Curr Owner | Sign(current_owner, version_number)<sub>previous_owner</sub> |
+| Escrows | Sign(escrow_1, ..., escrow_n)<sub>previous_owner</sub> |
+| Escrow 1 | Sign(owner)<sub>escrow_1</sub> |
+| ... | ... |
+| Escrow n | Sign(owner)<sub>escrow_n</sub> |
 
 The name of a safecoin is 64 bytes long to allow it to be a network-addressable object. However, the name has a particular format:
 
@@ -335,9 +324,29 @@ The fourth part is random padding.
 
 The fifth part indicates the level of subdivision of the original token, i.e. it contains the value of x.
 
-This format allows the tokens to be split into 2^248 parts if required. The splitting process will only allow the token (or subdivided token) to be bisected, so e.g. quartering a token would need to be done in 2 steps. When splitting a token, only the name changes; all other parts are copied to the new subdivisions. The split results in 2 SDVs, each representing a half of the original SDV. This procedure is further illustrated in the following diagram.
+This format allows the tokens to be split into 2<sup>248</sup> parts if required. The splitting process will only allow the token (or subdivided token) to be bisected, so e.g. quartering a token would need to be done in 2 steps. When splitting a token, only the name changes; all other parts are copied to the new subdivisions. The split results in 2 tokens, each representing a half of the original token value. This procedure is further illustrated in the following diagram.
 
 ![Diagram Split SDV](https://raw.github.com/maidsafe/Whitepapers/master/resources/split_sdv_diagram.png)
+
+The current_owner, together with the current version number, needs to be signed by the previous_owner, allowing a third party verification.
+
+Escrows have the right to block / enable the access to the token by voting with majority (fill the correspondent excrow field with approved owner). i.e. only the majority of escrow approved owner will be allowed to update the token data.
+
+This special safecoin data is being distributed by the DataManager and held in PmidManager's memory (shall never be stored to PmidNode as a chunk).
+
+#### 7.	Safecoin Requests / Persona Roles
+
+Safecoin data is one kind of data, so it has PUT and GET request being defined. However, unlike normal data, there is no DELETE request defined for it. The PUT request for safecoin is "no duplication allowed", i.e. if there is already a safecoin data having same name (first 32 bits), the new put request shall be rejected. This will be handled by DataManager receiving the request.
+
+A new request, EXCHANGE, is defined to allow approved requester update the pay_load of the token data. The rules defined as :
+* Only the owner that be approved by the majority of escrows and owners (previous / current owners considered as approved themselves) can update all fields.
+* Each escrow can only update their correspondent field once
+* Each time prev / curr owner field get updated, the version_number must be increased by 1 step, and all escrow fields shall be erased
+
+The above rules will be enforced by PmidManager holding the safecoin data. As the ownship field together with the escrow fields are actually used as "transaction", here PmidManager becomes practical TransactionManager and the safecoin data can be considered as receipt object as well.
+
+The safecoin data also served as "wallet" to itself, i.e. a wallet holds one token only. A user level bookkeeper, holding the list of token one user owns, can be done as a client only application. That list of token information can be stored in user's local machine or uploaded to the network as encrypted data.
+
 
 #### 8.	Safecoin Transaction Structure / Scenarios
 The following diagram illustrates the transaction structure for RPC requests and data structure in Transaction Manager. It has the capability to support moderator model (like multi-signature [ref Escrow] [ref BIP16/17] proposed for Bitcoin) and third party virtual currency (such as MasterCoin protocol [ref MasterCoin]).
