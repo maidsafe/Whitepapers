@@ -355,7 +355,8 @@ R.A.T = Sign(Hash( (merkle_tree_root + msg_id) XOR R.A.T prev ))<sub>PmidManager
 where : merkle_tree_root is generated from all the chunks stored on that vault
 
 msg_id is the agreed random ID among the Pmid Manager group.
-Sign()<sub>PmidManagerGroup</sub> makes RAT as proof of mining, allowing other vaults to verify.
+
+Sign()<sub>PmidManagerGroup</sub> means the PmidManager group in charge shall sign the hashed result. This makes RAT as proof of mining, allowing other vaults to verify.
 
 The R.A.T will then be sent to the Data Manager as a PUT request, claiming the ownership of that token on behalf of that vault. If DataManager has no record of a token data bearing same token_index (first 32 bits), the token data will be passed to PmidManager to be held, and the correspodent MaidManager will be notified of the success. Otherwise, the request will be muted.
 
@@ -388,6 +389,7 @@ Given the collision probability against the accumulated number of attempts as sh
 | 95% | 3 N |
 
 A projection of coin distribution can be illustrated as : (table Projected Coin Distribution)
+
 ![Projected Coin Distribution](https://github.com/maidsafe/Whitepapers/blob/master/resources/projected_coin_distribution_over_time_log.png)
 
 
