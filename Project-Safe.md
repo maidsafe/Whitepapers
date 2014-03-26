@@ -349,9 +349,9 @@ The safecoin data also served as "wallet" to itself, i.e. a wallet holds one tok
 
 
 #### 8.	Safecoin Transaction Structure / Scenarios
-The following diagram illustrates the transaction structure for RPC requests and data structure in Transaction Manager. It has the capability to support moderator model (like multi-signature [ref Escrow] [ref BIP16/17] proposed for Bitcoin) and third party virtual currency (such as MasterCoin protocol [ref MasterCoin]).
+The following diagram illustrates the evolve of RPC requests and safecoin data structure during a transaction process. It has the capability to support multiple escrows model (like multi-signature [ref Escrow] [ref BIP16/17] proposed for Bitcoin).
 
-![Transaction Structure](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_structure.png)
+![Transaction Structure](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_structure_merged.png)
 
 The following table illustrates the evolve of user accounts holding safecoin, together with the transaction and safecoin SDV held by Transaction Manager.
 ![Transaction Scenarios](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_scenarios_new.png)
@@ -430,5 +430,3 @@ To conclude, MaidSafe proposed the SAFE network, an economic system that contain
 [ref Escrow] The Escrow service for Bitcoin : http://btcrow.com/
 
 [ref BIP 16/17] BIP 16/17 in layman's term : https://bitcointalk.org/index.php?topic=61125.0
-
-[ref MasterCoin] Master Coin : http://www.mastercoin.org/
