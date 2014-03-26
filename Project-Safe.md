@@ -353,13 +353,13 @@ The following diagram illustrates the evolve of RPC requests and safecoin data s
 
 ![Transaction Structure](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_structure_merged.png)
 
-The following table illustrates the evolve of user accounts holding safecoin, together with the transaction and safecoin SDV held by Transaction Manager.
-![Transaction Scenarios](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_scenarios_new.png)
+The following table illustrates the evolve of user account holding safecoins info, together with the safecoin data held by PmidManager.
+![Transaction Scenarios](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_scenarios_merged.png)
 
 #### 9.	Mining Safecoin
 Every mining interval, the Pmid Manager group around a vault will perform the mining for that vault. The Pmid Manager will generate a Random Attempt Target (R.A.T) based on the following calculation:
 
-R.A.T = Sign(Hash( (merkle_tree_root + msg_id) XOR R.A.T prev ))<sub>PmidManagerGroup</sub>    ------   ⑤
+R.A.T = Sign(Hash( (merkle_tree_root + msg_id) XOR R.A.T prev ))<sub>PmidManagerGroup</sub>    ------   ④
 
 where : merkle_tree_root is generated from all the chunks stored on that vault
 
@@ -373,7 +373,7 @@ The mining interval allowed for a vault is determined by its contribution to the
   
 for each put attempts to the vault, when healthy_space is greater than group_average / 2 :
 
-MessageID % (24 - round(log<sub>2</sub>(healthy_space / 1MB))) == 0 ? true : false  ------   ⑥
+MessageID % (24 - round(log<sub>2</sub>(healthy_space / 1MB))) == 0 ? true : false  ------    ⑤
 
 where : group_average is average healthy_space among the close group the vault belongs to
 
