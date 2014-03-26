@@ -354,6 +354,7 @@ The following diagram illustrates the evolve of RPC requests and safecoin data s
 ![Transaction Structure](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_structure_merged.png)
 
 The following table illustrates the evolve of user account holding safecoins info, together with the safecoin data held by PmidManager.
+
 ![Transaction Scenarios](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/transaction_scenarios_merged.png)
 
 #### 9.	Mining Safecoin
