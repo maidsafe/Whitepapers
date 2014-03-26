@@ -28,7 +28,7 @@ The inclusion of a [crypto currency](https://www.google.com/patents/US2010006435
 
 Formed in February 2006 with the intent to decentralise the Internet, the  14-strong team is based in Troon, Scotland. To reach this project stage, MaidSafe has taken investment from close friends and family, as well as supporters and Angel Investors.  Further backing and supporters are required to push the platform out to the world and to incentivise network adoption. 
  
-It is also worth noting that the founder allocated all of his shares in MaidSafe to an employee share scheme (around 28%) and almost 50% of the business to a registered charity. This charity is the [MaidSafe Foundation](http://www.maidsafefoundation.org/). The Foundation will be a key player in this proposal and exists to ensure fair distribution of wealth, while helping to foster education and innovation.  Based in Scotland, the laws and regulations surrounding such organisations ensure there can be no profit motive for trustees or members of the Foundation. This is an important model for managing many aspects of a decentralised project such as SAFE.
+It is also worth noting that the founder allocated all of his shares in MaidSafe to an employee share scheme (around 28%) and almost 50% of the business to a not for profit foundation. The [MaidSafe Foundation](http://www.maidsafefoundation.org/) will be a key player in this proposal and exists to ensure fair distribution of wealth, while helping to foster education and innovation.  Based in Scotland, the laws and regulations surrounding such organisations ensure there can be no profit motive for trustees or members of the Foundation. This is an important model for managing many aspects of a decentralised project such as SAFE.
 
 ##### 2. Project Status
 
@@ -96,14 +96,16 @@ MaidSafe's figures forecast an estimated mining rate over time, this forecast is
 To allow distributed ownership of the network, MaidSafe will allocate 15% of the tokens on day 1.  The coins allocated are fungible, particularly in the form of resources as backers reach their required returns or simply trade the coins.  This allocation of safecoin will allow two separate entities to be rewarded:
 
 ###### a: Current MaidSafe investors/shareholders. 
-The current MaidSafe investors have invested for the past 8 years with complete faith and desire to make a difference.  These investors have been the very reason the technology is now developed and this proposal possible.  Five percent of the safecoin issue will be laid aside for these investors and as safecoin is increasing in value, current investors will be able to swap their shareholding in MaidSafe.net for the coins.   **The coins will be held by the MaidSafe Foundation for issuance at the request of each shareholder.** The safecoin here will be allocated at the point miners are introduced onto the network.
+The current MaidSafe investors have invested for the past 8 years with complete faith and a strong desire to make a difference.  These investors have been the very reason the technology is now developed and this proposal possible.  Five percent of the safecoin issue will be laid aside for these investors and as safecoin is increasing in value, current investors will be able to swap their shareholding in MaidSafe.net for the coins.   **The coins will be held by the MaidSafe Foundation for issuance at the request of each shareholder.** The safecoin here will be allocated at the point miners are introduced onto the network.
  
 This allows investors to be rewarded for their help over the years and will also allow MaidSafe equity to return to being owned completely by the Foundation.  This approach will ensure that MaidSafe as a company is not in charge of the SAFE network and shareholders are treated with the respect they deserve.  When they are allocated safecoin they can hold these as any backer will today. 
  
 ###### b: Crowd Sale Participants
-A crowd sale will enable everyone worldwide to seed and be a part of the SAFE project.  This will last for 30 days and will enable a direct purchase (pre order) of ten percent of safecoin. MaidSafe are keen that the crowd sale is as fair as possible and to that end will not set the coin price, it is proposed that the market decide the value. Therefore, participants can pay in either,bitcoin, mastercoin or cash for an unknown number of coins, only as the crowd sale ends will the value and number of coins become known. As miners begin to earn and developers release products, this valuation should very quickly increase. 
+A crowd sale will enable everyone worldwide to seed and be a part of the SAFE project.  This will last for 30 days and will enable a direct purchase of ten percent of safecoin. MaidSafe are keen that the crowd sale is as fair as possible and to that end will not set the coin price, it is proposed that the market will decide the value. Therefore, participants can pay in either, bitcoin, mastercoin or cash for an unknown number of coins, only as the crowd sale ends will the value and number of coins become known to each participant. As miners begin to earn and developers release products, this valuation should very quickly increase. 
 
-These crowd sale participants will pre order safecoins, these orders will be recorded in the bitcoin blockchain via the Master protocol suite. The safcoins purchased will be credited to the participants safecoin wallets as soon as the full network is launched and earners (miners) appear online. This allows immediate benefit to the project and will demonstrate the desire of all backers to decentralise the Internet, enabling a plethora of new and exciting companies to emerge and provide true value at minimal cost.
+These crowd sale participants will be buying MaidSafeCoin, an intermediary coin that will be be swapped on a 1 : 1 ratio for safecoin once the full SAFE network is launched. Purchases will be recorded in the bitcoin blockchain via the Master protocol suite. MaidSafe will be running a test net initially and will potentially need to bring the network up and down during testing, this is why an intermediary coin is required. It will be possible for backers to use and trade MaidSafeCoins prior to the launch of the full network, again with all transactions recorded on the Bitcoin blockchain.
+
+The MaidSafe coins purchased will be credited as safecoins to the participants safecoin wallets as soon as the full network is launched and earners (miners) appear online. This allows immediate benefit to the project and will demonstrate the desire of all backers to decentralise the Internet, enabling a plethora of new and exciting companies to emerge and provide true value at minimal cost.
 
 Funds raised from this round will be held by the MaidSafe Foundation and will be utilised to house the MaidSafe core team and provide financial assistance for a period of three years. It is assumed that after three years, the core MaidSafe team will have grown significantly and introduced further innovations into the space. There is no founders pool and the MaidSafe developers and team are not issued any safecoin and must earn these through commits to the code base and further innovation. This is a very important aspect of this project. No team should be rewarded by safecoin who have not provided value in some respect and this is particularly important of any existing development team.
 
@@ -132,14 +134,14 @@ Third party developers will also be incentivised outside of the token scheme.  C
 
 The crowd sale will be operated as follows:
 
-* A fixed number of safecoin will be issued and purchased during the 30 day crowd sale
+* A fixed number of MaidSafeCoin will be issued and purchased during the 30 day crowd sale
 * Within that period, public funds in the form of bitcoin, mastercoin and cash can be sent to bitcoin/mastercoin addresses set up by MaidSafe; this address is called the Origin address.
-* Each backer will pre order safecoins during the crowd sale, these will be recorded on the Bitcoin block chain and will be recorded in each participants safecoin wallet as the full network is launched. 
+* Each backer will swap their MaidSafeCoins on a 1 : 1 ratio on launch of the full network
+* All purchases and transctions will be recorded on the Bitcoin block chain via the Mastercoin protocol
+* Each participants safecoin wallet will be credited as the full network is launched and they create their SAFE network accounts. 
 * A quantity of 429,496,729 coins will be available for purchase, this equates to 10% of all safecoins.
 
 **After this stage is complete there will be no further opportunities of this sort available on the SAFE network with safecoin.**
-
-Any funds allocated outside the crowd sale will be allocated to the MaidSafe Foundation and added to the decentralised application developers pool.
 
 The incentivisation of decentralised application projects that are funded via safecoin should also ensure a very active participation into a very powerful ecosystem with a pre-prepared revenue model.  It is also thought this model will encourage a more decentralised and distributed pool of backers.  This model is very much in line with MaidSafe’s core values and decentralisation in general, using logic and fairness with as few ‘magic’ numbers as possible. 
 
