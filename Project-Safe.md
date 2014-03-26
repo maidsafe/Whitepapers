@@ -326,7 +326,7 @@ The fifth part indicates the level of subdivision of the original token, i.e. it
 
 This format allows the tokens to be split into 2<sup>248</sup> parts if required. The splitting process will only allow the token (or subdivided token) to be bisected, so e.g. quartering a token would need to be done in 2 steps. When splitting a token, only the name changes; all other parts are copied to the new subdivisions. The split results in 2 tokens, each representing a half of the original token value. This procedure is further illustrated in the following diagram.
 
-![Diagram Split SDV](https://raw.github.com/maidsafe/Whitepapers/master/resources/split_sdv_diagram.png)
+![Diagram Split Safecoin](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/split_safecoin_diagram.png)
 
 The current_owner, together with the current version number, needs to be signed by the previous_owner, allowing a third party verification.
 
