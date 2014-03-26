@@ -350,40 +350,29 @@ The following table illustrates the evolve of user accounts holding safecoin, to
 #### 9.	Mining Safecoin
 Every mining interval, the Pmid Manager group around a vault will perform the mining for that vault. The Pmid Manager will generate a Random Attempt Target (R.A.T) based on the following calculation:
 
-R.A.T = Hash( (merkle_tree_root + msg_id) XOR R.A.T prev )    ------   ⑤
+R.A.T = Sign(Hash( (merkle_tree_root + msg_id) XOR R.A.T prev ))<sub>PmidManagerGroup</sub>    ------   ⑤
 
 where : merkle_tree_root is generated from all the chunks stored on that vault
 
 msg_id is the agreed random ID among the Pmid Manager group.
+Sign()<sub>PmidManagerGroup</sub> makes RAT as proof of mining, allowing other vaults to verify.
 
-The R.A.T will then be sent to the Transaction Manager as a SDV creation request, claiming the ownership of that SDV on behalf of that vault.
-
-The Transaction Manager will try to create an SDV with that name, and the last owner shall be the hash (maid_name).
-
-If that SDV already existed, the Transaction Manager will then try to update all that SDV's sub-dividents which are not taken yet.
-
-The Maid Manager group of the maid_name will be notified when the Transaction Manager created or updated an SDV successfully, otherwise the request is muted.
+The R.A.T will then be sent to the Data Manager as a PUT request, claiming the ownership of that token on behalf of that vault. If DataManager has no record of a token data bearing same token_index (first 32 bits), the token data will be passed to PmidManager to be held, and the correspodent MaidManager will be notified of the success. Otherwise, the request will be muted.
 
 The mining interval allowed for a vault is determined by its contribution to the network. The interval is calculated as follows:
   
-when healthy_space is greater than 4GB : mining_interval = 25 - min(24, healthy_space / 4GB) (hour)      ------   ⑥
+for each put attempts to the vault, when healthy_space is greater than group_average / 2 :
 
-i.e. the quickest mining speed is one attempt per hour and the slowest is one attempt per day (24 hours)
+MessageID % (24 - round(log<sub>2</sub>(healthy_space / 1MB))) == 0 ? true : false  ------   ⑥
 
-Continuous connection time of each vault is used, i.e. when a vault is switched off / disconnected, the interval timer will is stopped and reset, generating no coins for the offline vault.
+where : group_average is average healthy_space among the close group the vault belongs to
 
-Following is the estimation of MaidSafe network size, the average mining attempts and the total attempts along time : (table network projection)
+MessageID is the message_id from the put attempt request
 
-| Number of Nodes | Attempts Per day Per node | Total Attempts along time (years) |  |  |  |  | 
-| ---------------|:-----------------:|:-----------------:|:-----------------:|:-----------------:|:-----------------:|:-----------------:|
-| |  | 1 | 2 | 5 | 10 | 20 |
-| 10000 | 6 | 22 million |  |  |  |  |　
-| 50000 | 12 |  | 438 million |  |  |  | 
-| 100000 | 15 |  |  |　2.7 billion |  |  |　
-| 200000 | 20 |  |  |  | 14.6 billion |  |
-| 500000 | 24 |  |  |  |  | 87.6 billion |
+This caps the quickest mining speed at one mining attempt per put attempt and set the slowest to be one mining attempt per 24 put attempts.
 
-Given the collision probability as : (table collision probability) where N is the total space
+
+Given the collision probability against the accumulated number of attempts as shown in the following table : (table collision probability) where N is the total space (which is 4.3 billion in our case as the issuance of safecoin is capped at 2<sup>32</sup>)
 
 | Collision Probability | Num of Attempts |
 | ---------------|:-----------------:|
@@ -398,9 +387,9 @@ Given the collision probability as : (table collision probability) where N is th
 | 90% | 2.3 N |
 | 95% | 3 N |
 
-As the issuance of safecoin is capped at 4.3 billion, it is expected that a 50% collision rate will be reached after 5 years. 95% collision rate will be reached after 10 years, as illustrated in the following diagram. <diagram Coin Distribution Projection>
+A projection of coin distribution can be illustrated as : (table Projected Coin Distribution)
+![Projected Coin Distribution](https://github.com/maidsafe/Whitepapers/blob/master/resources/projected_coin_distribution_over_time_log.png)
 
-![Diagram Projected Coin Distribution](https://raw.github.com/maidsafe/Whitepapers/master/resources/projected_coin_distribution_over_time.png)
 
 
 #### 10.	Day 1 Injection
