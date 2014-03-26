@@ -101,7 +101,9 @@ The current MaidSafe investors have invested for the past 8 years with complete 
 This allows investors to be rewarded for their help over the years and will also allow MaidSafe equity to return to being owned completely by the Foundation.  This approach will ensure that MaidSafe as a company is not in charge of the SAFE network and shareholders are treated with the respect they deserve.  When they are allocated safecoin they can hold these as any backer will today. 
  
 ###### b: Crowd Sale Participants
-A crowd sale will enable everyone worldwide to seed and be a part of the SAFE project.  This will enable a direct purchase (pre order) of ten percent of safecoin. MaidSafe are keen that the crowd sale is as fair as possible and to that end will not set the coin price, it is proposed that the market decide the value. Therefore, participants can pay in either,bitcoin, mastercoin or cash for an unknown number of coins, only as the crowd sale ends (after 30days) will the value and number of coins become known. As miners begin to earn and developers release products, this valuation should very quickly increase. These crowd sale participants will pre order safecoins, these orders will be recorded in the bitcoin blockchain via the Master protocol suite. The safcoins purchased will be credited to the participants safecoin wallets as soon as the full network is launched and earners (miners) appear online. This allows immediate benefit to the project and will demonstrate the desire of all backers to decentralise the Internet, enabling a plethora of new and exciting companies to emerge and provide true value at minimal cost.
+A crowd sale will enable everyone worldwide to seed and be a part of the SAFE project.  This will last for 30 days and will enable a direct purchase (pre order) of ten percent of safecoin. MaidSafe are keen that the crowd sale is as fair as possible and to that end will not set the coin price, it is proposed that the market decide the value. Therefore, participants can pay in either,bitcoin, mastercoin or cash for an unknown number of coins, only as the crowd sale ends will the value and number of coins become known. As miners begin to earn and developers release products, this valuation should very quickly increase. 
+
+These crowd sale participants will pre order safecoins, these orders will be recorded in the bitcoin blockchain via the Master protocol suite. The safcoins purchased will be credited to the participants safecoin wallets as soon as the full network is launched and earners (miners) appear online. This allows immediate benefit to the project and will demonstrate the desire of all backers to decentralise the Internet, enabling a plethora of new and exciting companies to emerge and provide true value at minimal cost.
 
 Funds raised from this round will be held by the MaidSafe Foundation and will be utilised to house the MaidSafe core team and provide financial assistance for a period of three years. It is assumed that after three years, the core MaidSafe team will have grown significantly and introduced further innovations into the space. There is no founders pool and the MaidSafe developers and team are not issued any safecoin and must earn these through commits to the code base and further innovation. This is a very important aspect of this project. No team should be rewarded by safecoin who have not provided value in some respect and this is particularly important of any existing development team.
 
@@ -130,12 +132,10 @@ Third party developers will also be incentivised outside of the token scheme.  C
 
 The crowd sale will be operated as follows:
 
-* A fixed number of MaidSafeCoin will be issued and purchased in this round.
-* Within that period, public funds in the form of bitcoin and mastercoin can be sent to a bitcoin address set up by MaidSafe; this address is called the Origin address.
-* Each backer will purchase MaidSafecoin in this round. This will be directly transferable to safecoin on network earner launch.
-* A quantity of 429,496,729 coins will be purchased for an initial value of 20,333 per bitcoin or 1,464 per mastercoin. (crowd sale total $12.9 million depending on exchange rates). 
-* The corresponding amount of safecoin will then be credited into the MaidSafe account created by the network and convertible directly from MaidSafeCoin on a one to one basis.
-* Any unsold MaidSafeCoin will be split 50/50 between the existing investors and the developer pool. These developer coins will be allocated to fully planned out and resourced projects initially, to encourage rapid adoption.
+* A fixed number of safecoin will be issued and purchased during the 30 day crowd sale
+* Within that period, public funds in the form of bitcoin, mastercoin and cash can be sent to bitcoin/mastercoin addresses set up by MaidSafe; this address is called the Origin address.
+* Each backer will pre order safecoins during the crowd sale, these will be recorded on the Bitcoin block chain and will be recorded in each participants safecoin wallet as the full network is launched. 
+* A quantity of 429,496,729 coins will be available for purchase, this equates to 10% of all safecoins.
 
 **After this stage is complete there will be no further opportunities of this sort available on the SAFE network with safecoin.**
 
