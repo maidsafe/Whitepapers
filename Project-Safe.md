@@ -373,7 +373,7 @@ MessageID is the message_id from the put attempt request
 This caps the quickest mining speed at one mining attempt per put attempt and set the slowest to be one mining attempt per 24 put attempts.
 
 
-Given the collision probability against the accumulated number of attempts as shown in the following table : (table collision probability) where N is the total space (which is 4.3 billion in our case as the issuance of safecoin is capped at 2<sup>32</sup>)
+Given the collision probability against the accumulated number of attempts as shown in the following table. Where N is the total space (which is 4.3 billion in our case as the issuance of safecoin is capped at 2<sup>32</sup>).
 
 | Collision Probability | Num of Attempts |
 | ---------------|:-----------------:|
@@ -388,9 +388,9 @@ Given the collision probability against the accumulated number of attempts as sh
 | 90% | 2.3 N |
 | 95% | 3 N |
 
-A projection of coin distribution can be illustrated as : (table Projected Coin Distribution)
+A projection of coin distribution can be illustrated as :
 
-![Projected Coin Distribution](https://github.com/maidsafe/Whitepapers/blob/master/resources/projected_coin_distribution_over_time_log.png)
+![Projected Coin Distribution](https://raw.githubusercontent.com/maidsafe/Whitepapers/master/resources/projected_coin_distribution_over_time_log.png)
 
 
 
