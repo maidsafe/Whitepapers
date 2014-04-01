@@ -137,12 +137,14 @@ Third party developers will also be incentivised outside of the token scheme.  C
 
 The crowd sale will be operated as follows:
 
-* A fixed number of MaidSafeCoin will be issued and purchased during the 30 day crowd sale
-* Within that period, public funds in the form of bitcoin, mastercoin and cash can be sent to bitcoin/mastercoin addresses set up by MaidSafe; this address is called the Origin address.
-* Each backer will swap their MaidSafeCoins on a 1 : 1 ratio on launch of the full network
-* All purchases and transctions will be recorded on the Bitcoin block chain via the Mastercoin protocol
-* Each participants safecoin wallet will be credited as the full network is launched and they create their SAFE network accounts. 
-* A quantity of 429,496,729 coins will be available for purchase, this equates to 10% of all safecoins.
+* A fixed number of MaidSafeCoin will be issued during the crowd sale
+* The sale will last until all coins have been purchased (circa $8million) or will end after 30days if the event does not sell out
+* Within that period, public funds in the form of bitcoin and mastercoin can be sent to exodus bitcoin and mastercoin addresses via a website: INSERT URL
+* Each participant will purchase an intermediary coin, MaidSafeCoin
+* Once the full network is launched these will be traded on a 1:1 basis for safecoin 
+* All purchases and transctions will be recorded on the Bitcoin block chain via the Mastercoin protocol 
+* Each participants safecoin wallet will be credited as the full network is launched and they create their SAFE network accounts
+* A quantity of 429,496,729 coins will be available for purchase, this equates to 10% of all safecoins
 
 **After this stage is complete there will be no further opportunities of this sort available on the SAFE network with safecoin.**
 
