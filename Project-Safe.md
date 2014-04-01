@@ -106,7 +106,7 @@ will last until MaidSafeCoin are sold out (circa $8million). If the all coins ar
 
 These crowd sale participants will be buying MaidSafeCoin, an intermediary coin that will be swapped on a 1:1 ratio for safecoin once the full SAFE network is launched. Purchases will be recorded in the bitcoin blockchain via the Master protocol suite. MaidSafe will be running a test net initially and will potentially need to bring the network up and down during testing, this is why an intermediary coin is required. 
 
-Particpants will be able to purchase MaidSafeCoins using either bitcoin or mastercoin with payments being made via a website INSERT URL to bitcoin and mastercoin exodus addresses. These addresses will be published on both the crowd sale website and MaidSafe's own website prior to the commencement of the crowd sale. Participants will recieve their MaidSafeCoin into their mastercoin wallet. If a participant does not already have one of these they can be downloaded for free from: http://www.mastercoinwallets.org/. At present only Windows wallets are available, however a web wallet will be available soon.
+Particpants will be able to purchase MaidSafeCoins using either bitcoin or mastercoin with payments being made via a website: INSERT URL to bitcoin and mastercoin exodus addresses. These addresses will be published on both the crowd sale website and MaidSafe's own website prior to the commencement of the crowd sale. Participants will recieve their MaidSafeCoin into their mastercoin wallet. If a participant does not already have one the wallets can be downloaded for free from: http://www.mastercoinwallets.org/. At present only Windows wallets are available, however a web wallet will be available soon.
 
 The MaidSafe coins purchased will be credited as safecoins to the participants safecoin wallets as soon as the full network is launched and earners (miners) appear online. This allows immediate benefit to the project and will demonstrate the desire of all backers to decentralise the Internet, enabling a plethora of new and exciting companies to emerge and provide true value at minimal cost.
 
@@ -145,6 +145,7 @@ The crowd sale will be operated as follows:
 * All purchases and transctions will be recorded on the Bitcoin block chain via the Mastercoin protocol 
 * Each participants safecoin wallet will be credited as the full network is launched and they create their SAFE network accounts
 * A quantity of 429,496,729 coins will be available for purchase, this equates to 10% of all safecoins
+* In the event that not all coins are sold, the remaining coins will be burned
 
 **After this stage is complete there will be no further opportunities of this sort available on the SAFE network with safecoin.**
 
