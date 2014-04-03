@@ -225,7 +225,7 @@ The Trusted Group feature, delivered by the SAFE network, ensures the system is 
 #### 3.	Transfer Mechanism
 On the SAFE network, vaults assume various personas or roles [ref Persona], depending on the requests they receive.  For example, the DataManager persona is responsible for managing the integrity and availability of a given piece of data on the network.  A separate persona, the TransactionManager, is proposed to handle all the token-related transactions.  A TransactionManager group will be a trusted group of nodes which are closest to any given transaction identity. The TransactionManager is responsible for the logic that enables transactions to be completed.
 
-The transfer mechanism is defined as: ‘allowing a transaction (transfer of credit from A's wallet to B's wallet) between two user's persona groups to be completed’. The transaction shall be open and read only to public (allowing upper layer third party broker app to validate there is transaction happening/completed).
+The transfer mechanism is defined as: ‘allowing a transaction (transfer of credit from A's wallet to B's wallet) between two user's persona groups to be completed’. The transaction shall be open and read only to public (allowing an upper layer third party broker app to validate there is transaction happening/completed).
 
 The SAFE wallet is defined as : the place holding the credits (and the credit change history) for an account.
 
@@ -263,7 +263,7 @@ On the SAFE network, a user contributes to the network by running a vault, which
 
 * available_space: the storage space a vault claimed (via the user) it can contribute to the network
 
-* data_cost: data_cost will be calculated as the data_size that user stored to network. It will be refunded once user delete the stored data. The client application has a local level deduplication, which will prevent a user to be charged twice when storing the same data again to the network.
+* data_cost: data_cost will be calculated as the data_size that user stored to network. It will be refunded once user deletes the stored data. The client application has a local level deduplication, which will prevent a user from being charged twice when storing the same data again to the network.
 
 * used_space: total data_cost of all the chunks that user put to network
 
@@ -280,7 +280,7 @@ This ensures P.O.R becomes a huge negative when the user transfers out P.O.R and
 
 A user’s initial allowance will be granted by setting used_space to negative claimed available_space. If any cheating is detected, the used_space will be changed to reflect that.
 
-This will also cover for situations when a user’s P.O.R drops low by allowing the user to mutate his free allowance data.
+This will also cover for situations when a user’s P.O.R drops by allowing the user to mutate his free allowance data.
 
 * P.O.R is transferable among users
 
@@ -303,7 +303,7 @@ processing any updates.
 #### 5.	Economic System With Two Types Of Token
 P.O.R is proposed in order to facilitate the exchange of storage space on the SAFE network. However, as it doesn't have a predictable cap number, it may not be considered a genuine virtual currency. To provide a more robust form of exchange, MaidSafe proposes a token system that is totally independent of P.O.R, called safecoin. Safecoin will have a predicatable cap and will be injected into network using the storage space related mining procedure.
 
-A bridge (converting rate) between P.O.R and safecoin can be established by the market solely. With third party upper layer broker applications, it will be possible to use safecoin to buy P.O.R or vice versa (user_A give safecoin to user_B in exchange for user_B's P.O.R). It is expected that the per unit value of P.O.R will keep decreasing, while the per unit value of safecoin will continue to rise. In this way, it will be possible to buy more and more P.O.R with one safecoin. Safecoin will only be stored in the Maid Account wallet, this can only be updated by the Maid Manager group.
+A bridge (converting rate) between P.O.R and safecoin can be established by the market solely. With third party upper layer broker applications, it will be possible to use safecoin to buy P.O.R or vice versa (user_A gives safecoin to user_B in exchange for user_B's P.O.R). It is expected that the per unit value of P.O.R will keep decreasing, while the per unit value of safecoin will continue to rise. In this way, it will be possible to buy more and more P.O.R with one safecoin. Safecoin will only be stored in the Maid Account wallet, this can only be updated by the Maid Manager group.
 
 The value one safecoin represents will be recognised by all peers across the network and outside the network. If the economic system works as intended, safecoin will become a ‘virtual currency’ with the SAFE network being used to complete all transactions. Meanwhile, P.O.R will solely be used for exchanging space allowance among users.
 
@@ -361,16 +361,16 @@ This special safecoin data is being distributed by the DataManager and held in P
 
 #### 7.	Safecoin Requests / Persona Roles
 
-Safecoin data is one kind of data, so it has PUT and GET request being defined. However, unlike normal data, there is no DELETE request defined for it. The PUT request for safecoin is "no duplication allowed", i.e. if there is already a safecoin data having same name (first 32 bits), the new put request shall be rejected. This will be handled by DataManager receiving the request.
+Safecoin data is one kind of data, so it has PUT and GET request being defined. However, unlike normal data, there is no DELETE request defined for it. The PUT request for safecoin is "no duplication allowed", i.e. if there is already a safecoin data having same name (first 32 bits), the new put request shall be rejected. This will be handled by the DataManager receiving the request.
 
 A new request, EXCHANGE, is defined to allow approved requester update the pay_load of the token data. The rules defined as :
 * Only the owner that be approved by the majority of escrows and owners (previous / current owners considered as approved themselves) can update all fields.
 * Each escrow can only update their correspondent field once
 * Each time prev / curr owner field get updated, the version_number must be increased by 1 step, and all escrow fields shall be erased
 
-The above rules will be enforced by PmidManager holding the safecoin data. As the ownship field together with the escrow fields are actually used as "transaction", here PmidManager becomes practical TransactionManager and the safecoin data can be considered as receipt object as well.
+The above rules will be enforced by the PmidManager holding the safecoin data. As the ownership field, together with the escrow fields, are used as a 'transaction', the PmidManager effectively becomes the TransactionManager. In this instance, the safecoin data can also be considered as a receipt object as well.
 
-The safecoin data also served as "wallet" to itself, i.e. a wallet holds one token only. A user level bookkeeper, holding the list of token one user owns, can be done as a client only application. That list of token information can be stored in user's local machine or uploaded to the network as encrypted data.
+The safecoin data also served as "wallet" to itself, i.e. a wallet that holds one token only. A user level bookkeeper, holding the list of token one user owns, can be completed as a client only application. That list of token information can be stored in user's local machine or uploaded to the network as encrypted data.
 
 
 #### 8.	Safecoin Transaction Structure / Scenarios
