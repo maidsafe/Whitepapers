@@ -176,7 +176,7 @@ In this manner, **MaidSafe will ‘eat at the same table’ as all other develop
 
 The MaidSafe Foundation will initially:
 
-* Hold and distribute safecoin for developer pools.
+* Hold and distribute safecoin for developer pools
 * Manage issuance of MaidSafeCoin to funders and existing investors
 * Hold all patents and use safecoin to pay for the upkeep and further patents for all projects (until this sphere cannot be litigated against, the MaidSafe Foundation will act as the holder of defensive patents, of which there is already a considerable worldwide portfolio, to protect the decentralised Internet).
 * House the MaidSafe team in an HQ and provide funding for independent development pods, worldwide 
@@ -223,7 +223,7 @@ The Trusted Group feature, delivered by the SAFE network, ensures the system is 
 
 
 #### 3.	Transfer Mechanism
-On the SAFE network, vaults assume various personas or roles [ref Persona], depending on the requests they receive.  For example, the DataManager persona is responsible for managing the integrity and availability of a given piece of data on the network.  A separate persona, TransactionManager, is proposed to handle all the token-related transactions.  A TransactionManager group will be a trusted group of nodes which are closest to any given transaction identity. The TransactionManager is responsible for the business logical to complete a transaction.
+On the SAFE network, vaults assume various personas or roles [ref Persona], depending on the requests they receive.  For example, the DataManager persona is responsible for managing the integrity and availability of a given piece of data on the network.  A separate persona, the TransactionManager, is proposed to handle all the token-related transactions.  A TransactionManager group will be a trusted group of nodes which are closest to any given transaction identity. The TransactionManager is responsible for the logic that enables transactions to be completed.
 
 The transfer mechanism is defined as: ‘allowing a transaction (transfer of credit from A's wallet to B's wallet) between two user's persona groups to be completed’. The transaction shall be open and read only to public (allowing upper layer third party broker app to validate there is transaction happening/completed).
 
