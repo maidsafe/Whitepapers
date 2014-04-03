@@ -140,14 +140,29 @@ Third party developers will also be incentivised outside of the token scheme.  C
 The crowd sale will be operated as follows:
 
 * A fixed number of MaidSafeCoin will be issued during the crowd sale
-* The sale will last until all coins have been purchased (circa $8million) or will end after 30days if the event does not sell out
-* Within that period, public funds in the form of bitcoin and mastercoin can be sent to exodus bitcoin and mastercoin addresses via a website: INSERT URL
+* The sale will last until all coins have been purchased (circa $8million) or 30 days has passed, whatever happens first
+* Within that period, public funds in the form of bitcoin and mastercoin can be sent to exodus bitcoin address via www.BuySafeCoins.com
 * Each participant will purchase an intermediary coin, MaidSafeCoin
-* Once the full network is launched these will be traded on a 1:1 basis for safecoin 
-* All purchases and transctions will be recorded on the Bitcoin block chain via the Mastercoin protocol 
-* Each participants safecoin wallet will be credited as the full network is launched and they create their SAFE network accounts
 * A quantity of 429,496,729 coins will be available for purchase, this equates to 10% of all safecoins
+* Early buyer incentives are in place to reward early participation (see chart below)
+* It is estimated that participants will purchase 17,000 MaidSafeCoins for 1 bitcoin
+* All purchases and transctions will be recorded on the Bitcoin block chain via the Mastercoin protocol
+* The deposit of funds in the exodus address will auto generate the appropriate level of MaidSafeCoins, they will be reciepted in the participants mastercoin wallet
+* Once the full network is launched these will be traded on a 1:1 basis for safecoin    
+* Each participants safecoin wallet will be credited as the full network is launched and they create their SAFE network accounts 
 * In the event that not all coins are sold, the remaining coins will be burned
+* All details are available at www.safecoin.io
+
+**Early buyer incentive**
+
+| Time | % Bonus |
+| -------------|:---------------:|
+|week 1	| 40% |
+|week 2 | 30% |
+|week 3 | 20% |
+|week 4 | 10% |
+
+
 
 **After this stage is complete there will be no further opportunities of this sort available on the SAFE network with safecoin.**
 
