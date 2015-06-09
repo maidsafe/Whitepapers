@@ -285,7 +285,6 @@ ated and efficient network.
 \end_inset
 
  ≡ Hash function such as SHA, MD5, etc.
- 
 \end_layout
 
 \begin_layout Itemize
@@ -370,7 +369,7 @@ ated and efficient network.
 \begin_inset Formula $\mathsf{STORE}$
 \end_inset
 
- ≡ Network or other key addressable storage system 
+ ≡ Network or other key addressable storage system
 \end_layout
 
 \begin_layout Itemize
@@ -443,7 +442,6 @@ In this paper, we present a system where a directory structure may be traversed
  but no further back unless new knowledge of the structure is gained.
  This has the effect of allowing directory trees to be free forming rather
  than tied to any root or base level.
- .
 \end_layout
 
 \begin_layout Section
@@ -559,7 +557,7 @@ The entry may also contain all required metadata of
 \begin_inset Formula $\mathsf{Child}$
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -603,7 +601,7 @@ Encrypt
 \begin_inset Formula $\mathsf{PutV_{[ParentKey]}(ParentEnc)}$
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Enumerate
@@ -637,7 +635,7 @@ key "1"
 \end_inset
 
 .
- The process is as follows: 
+ The process is as follows:
 \end_layout
 
 \begin_layout Enumerate
@@ -767,7 +765,7 @@ Avoidance of network bottlenecks
 \end_layout
 
 \begin_layout Subsection
-Data Locks 
+Data Locks
 \end_layout
 
 \begin_layout Standard
@@ -796,7 +794,6 @@ To ensure writes to data are atomic, we require a locking mechanism that
  is solid and allows the network to recover from stale locks.
  In a MaidSafe DHT this can be achieved quite simply and is efficient due
  to the speed of the network, via managed connections.
- 
 \end_layout
 
 \begin_layout Standard
@@ -812,18 +809,15 @@ To write data, a node requires to request a lock from the
  DHT).
  On receiving a lock, each node will confer with the other nodes; if all
  accept the lock, then it will be implemented.
- .
  If there are any collisions of two separate requests for a lock, both are
  rejected.
  In this case, the requesting nodes will back-off for a random time and
  try again.
- 
 \end_layout
 
 \begin_layout Standard
 On receiving a lock, a node will read the data again to confirm it is the
  same version that has been updated and will then update the value.
- 
 \end_layout
 
 \begin_layout Standard
@@ -832,7 +826,6 @@ There should be a system wide lock duration
 constant
 \emph default
  in place that will remove any locks that have gone stale (as they will).
- 
 \end_layout
 
 \begin_layout Standard
@@ -846,11 +839,10 @@ Lock requests will be signed by the sender to allow the
 \size default
  recipients to confirm the permissions of the requester.
  If the signature validation fails, the requests are silently dropped.
- 
 \end_layout
 
 \begin_layout Subsection
-Private Shared Directory Structures 
+Private Shared Directory Structures
 \end_layout
 
 \begin_layout Standard
@@ -980,7 +972,7 @@ Create an ID for the share,
 \begin_inset Formula $\mathsf{PutV_{[ShareID]}(Share_{pub}+Sig{}_{[ShareOwn_{priv}]}(Share{}_{pub}))}$
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Enumerate
@@ -1129,7 +1121,6 @@ To revoke a peer's access to a shared directory, an administrator creates
  revoked) as in the previous section.
  When a peer receives such a message, it must start re-reading the share
  from the new root.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1144,7 +1135,6 @@ A user's system will note this action and if a file is opened, it will wait
  directory is locked.
  Otherwise it is safe to store the file as the recursive 'move' will not
  have reached that point.
- 
 \end_layout
 
 \begin_layout Subsection
@@ -1174,7 +1164,6 @@ The creator of a public shared directory uses a different cryptographic
  regardless of whether they are in the same tree or not.
  This way anyone can see the data but only the creator can edit it, without
  the need for locks.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1209,7 +1198,6 @@ In future, users will also be able to create anonymous shared directory
  These will be similar to public shared ones, but the keys under which datamaps
  are stored and any signing keys will not be traceable back to the user
  concerned.
- 
 \end_layout
 
 \begin_layout Section
@@ -1223,7 +1211,15 @@ This paper has introduced a method of storing data in a distributed network
  used by the existing world wide web for data sharing.
  It is evident that applications that make use of massively shared data
  and data presented on a native format to users is an exciting proposition.
- 
+\end_layout
+
+\begin_layout Section*
+Acknowledgment
+\end_layout
+
+\begin_layout Standard
+Thanks to Yanick Vézina who provided great assistance in proof reading this
+ paper.
 \end_layout
 
 \begin_layout Bibliography
